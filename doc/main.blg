@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: KomahannoVol.bib
+You're missing a field name---line 375 of file KomahannoVol.bib
+ : 
+ : %    pages       = "1205-1210",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 459 of file KomahannoVol.bib
+ : 
+ : @book{Bootstrap1,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 961 of file KomahannoVol.bib
+ : 
+ : sbn={978-1-4419-8338-1},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1307 of file KomahannoVol.bib
+ : 
+ : year = 2010
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1321 of file KomahannoVol.bib
+ : 
+ : year = 2010
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1567 of file KomahannoVol.bib
+ :      
+ :      year         = {2013}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field part---line 7501 of file KomahannoVol.bib
+ :                  year  = 
+ :                          ,
+I'm skipping whatever remains of this entry
+You're missing a field part---line 8289 of file KomahannoVol.bib
+ :     
+ :     }
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 2 entries,
+            2118 wiz_defined-function locations,
+            512 strings with 4250 characters,
+and the built_in function-call counts, 502 in all, are:
+= -- 45
+> -- 20
+< -- 0
++ -- 8
+- -- 6
+* -- 26
+:= -- 94
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 24
+empty$ -- 45
+format.name$ -- 6
+if$ -- 104
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 4
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 14
+preamble$ -- 1
+purify$ -- 7
+quote$ -- 0
+skip$ -- 13
+stack$ -- 0
+substring$ -- 10
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 4
+width$ -- 3
+write$ -- 25
+(There were 8 error messages)

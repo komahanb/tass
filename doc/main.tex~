@@ -1,0 +1,404 @@
+\documentclass[pdftex,11pt,letter]{article}
+\input{include.tex}
+
+\title{\textbf{AE6230 Structural Dynamics - Assignment 5}}
+\author{Komahan Boopathy~~\url{komahan@gatech.edu}} \date{\today}
+\usepackage{cancel}
+\begin{document}
+
+\maketitle
+\vspace{-0.25in}
+\rule{\linewidth}{2pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problem 2.1}
+The system shown in the figure consists of a smooth masless hoop of radius $R$ rotating with constant angular velocity $\Omega$ about a vertical axis. A bead of mass $m$ can slide freely around the hoop. Use Newton's second law to derive the equation of motion.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{prob1_ques.pdf}
+	\label{fig:prob1_ques}
+\end{figure}
+Let $u_\theta$ and $u_r$ be the unit vectors along the radial and angular directions. The bead of mass $m$ moves without friction on a circular hoop of radius $R$. The weight $mg$ acts downward alond negative y-direction; the component of weight acting outward along $u_\theta$ is $mg\sin\theta$. A centrifugal force of magnitude $mR\Omega^2\sin\theta\cos\theta$ acts outward.
+\\\\
+The position vector of the mass of the bead:
+\beq
+\mathbf{r} = R \mathbf{u}_r
+\eeq
+The velocity
+\beq
+\dot{\mathbf{r}}  = R\dot{\theta}\mathbf{u}_{\theta}
+\eeq
+The acceleration 
+\beq
+\ddot{\mathbf{r}} = -R\dot{\theta}^2\mathbf{u}_{r} + R\ddot{\theta}\mathbf{u}_{\theta}
+\eeq
+Apply Newton's law, to get the equation of motion.
+\beq
+\begin{split}
+-mg\sin\theta  & = mR\ddot{\theta} -mR\Omega^2\sin\theta\cos\theta\\
+\ddot{\theta} & = \Omega^2\sin\theta\cos\theta -\frac{g}{R} \sin\theta\\
+\end{split}
+\eeq
+\section{Problem 2.2}
+The masses $m_1$ and $m_2$ suspended on a massless string are vibrating in a vertical plane as shown in the figure. The displacements are sufficiently small that the slope of the string at any point remains small and the tension $T$ in the string remains constant at all times. Derive the equations of motions by means of Newton's second law.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{prob2_ques.pdf}
+	\label{fig:prob2_ques}
+\end{figure}
+
+There are two masses $m1$ and $m2$ which are interconnected using strings, hinged to the surfaces and are oscillating in vertical direction. 
+
+\begin{description}
+  \item[1.~Finding the position, velocity and acceleration]
+Consider the mass $m_1$ for which the position vector of the center of mass is
+\beq
+\mathbf{r_{c1}} = L_1 \mathbf{i} - y_1 \mathbf{j}
+\eeq
+The velocity of center of mass is
+\beq
+\mathbf{v_{c1}} =  -\dot{y_1} \mathbf{j}
+\eeq
+The acceleration of center of mass is
+\beq
+\mathbf{a_{c1}} = - \ddot{y_1} \mathbf{j}
+\eeq
+Similarly, for mass $m_2$, the position vector of the center of mass is
+\beq
+\mathbf{r_{c2}} = (L_1 + L_2) \mathbf{i} - y_2 \mathbf{j}
+\eeq
+The velocity of center of mass is
+\beq
+\mathbf{v_{c2}} = - \dot{y_2} \mathbf{j}
+\eeq
+The acceleration of center of mass is
+\beq
+\mathbf{a_{c2}} = - \ddot{y_2} \mathbf{j}
+\eeq
+
+
+\item[2.~Finding the resultant forces on masses] Using free-body diagrams for the system, we determine, the force on mass $m_1$:
+\beq
+  F_1 = -(T_1\cos\theta_1-T_2) \mathbf{i} + (T_1\sin\theta_1 - m_1g) \mathbf{j}
+\eeq
+The force on mass $m_2$ is
+\beq
+  F_2 = (T_3\cos\theta_2-T_2) \mathbf{i} + (T_3\sin\theta_2 - m_2g) \mathbf{j}
+\eeq
+Here, since $y_1$ and $y_2$ are said to be small, the tension $T_2$ is assumed to have just the horizontal component \textit{i.e.}~ $T_2 cos\phi\approx T_2$, where $\phi$ represents the angle made by the string $T_2$ with the horizontal, which is small.
+\item[3.~Invoke Newton's Law] We now apply the Newton's Law on each mass. \\For mass $m_1$,  $ m_1 \mathbf{a_{c1}} = F_1$:
+\beq
+\begin{split}\label{prob2:sol_1}
+                0 & = -(T_1\cos\theta_1-T_2) \\
+  -m_1 \ddot{(y_1)} & =  (T_1\sin\theta_1 - m_1g)\\
+\end{split}
+\eeq
+For mass $m_2$,  $ m_2 \mathbf{a_{c2}} = F_2$:
+\beq
+\begin{split}\label{prob2:sol_2}
+                0 & = (T_3\cos\theta_2 - T_2) \\
+  -m_2 \ddot{(y_2)} & = (T_3\sin\theta_2 - m_2g)\\
+\end{split}
+\eeq
+We can further simplify Eqs.~\eqref{prob2:sol_1} and~\eqref{prob2:sol_2}, by using  $T_1 = T_2 = T_3 = T$. 
+\beq
+\begin{split}\label{prob2:sol_1_sim}
+                0 & = -(T\cos\theta_1  -T) \\
+                0 & = (T\cos\theta_2  - T) \\
+  -m_1 \ddot{(y_1)} & =  (T\sin\theta_1 - m_1g)\\
+  -m_2 \ddot{(y_2)} & = (T\sin\theta_2  - m_2g)\\
+\end{split}
+\eeq
+The equations of motion is:
+\beq
+\begin{split}\label{prob2:sol_1_sim}
+  -m_1 \ddot{(y_1)} & = (T\sin\theta_1  - m_1g)\\
+  -m_2 \ddot{(y_2)} & = (T\sin\theta_2  - m_2g)\\
+              T\cos\theta_1 &= - T\cos\theta_2 \\
+\end{split}
+\eeq
+It can be seen that the tension-components help maintain zero-horizontal displacement of the system. This is possible only when $\theta_2$ =$\theta_1=\theta$, which further simplifies the equations of motion as:
+\beq
+\begin{split}\label{prob2:sol_1_sim}
+  -m_1 \ddot{(y_1)} & = (T\sin\theta  - m_1g)\\
+  -m_2 \ddot{(y_2)} & = (T\sin\theta  - m_2g)\\
+\end{split}
+\eeq
+Dividing by mass,
+\beq
+\begin{split}\label{prob2:sol_1_sim}
+   \ddot{y_1} & = g -\frac{T\sin\theta}{m_1} =  g -\frac{T\theta}{m_1}   \\
+   \ddot{y_2} & = g -\frac{T\sin\theta}{m_2} =  g -\frac{T\theta}{m_2} \\
+\end{split}
+\eeq
+\end{description}
+The equation of motion is valid only for small vertical displacements and angles $\theta$ thereof. In this problem $\theta$ from the horizontal axis.
+\section{Problem 2.3}
+A system consisting of a uniform rigid bar of mass $m$ and length $L$ and with both ends mounted on rollers is constrained to move as shown in the figure. The left and right ends of the bar are attached to linear spring to stiffnesses $k_1$ and $k_2$ respectively. When the bar is horizontal the springs are unstretched. Use the Newtonian approach to derive the two equations for the translation of the mass center $C$ and one equation for the rotation about $C$. The angle $\theta$ can be arbitrarily large.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.75]{prob3_ques.pdf}
+	\label{fig:prob3_ques}
+\end{figure}
+\subsection*{Solution}
+Let $x$ denote the displacement across spring 1 measured from the coordinate system fixed at the left-top. A second variable to denote the displacement of spring 2 is not needed as $y\equiv \frac{L}{2}\sin\theta$ and assuming the bar to be perfectly rigid. The friction due to the rollers are neglected as they are small. In other words the motion of the system can be completely defined in terms of $x$ and $\theta$.\\\\ 
+The force acting on the center of mass $\mathbf{F_R} = -k_1x \mathbf{i} + (k_2 \frac{L}{2}\sin\theta - mg) \mathbf{j} $. When the bar is horizontal the force-components due to the springs $k_1$ and $k_2$ vanish ($x=0$ and $\theta=0$) and only the gravity load acts in the negative-y direction. When the bar is inclined at an angle $\theta$, the spring 1 pulls to the left (hence negative) and the spring 2 pushes to the top (hence positive).
+\\\\
+The position of the center of mass $\mathbf{r}_c = (x+\frac{L}{2}\cos\theta) \mathbf{i} - (\frac{L}{2} \sin\theta)\mathbf{j}$\\
+The velocity of the center of mass $\mathbf{v}_c=(\dot{x}-\frac{L}{2}\sin\theta\dot{\theta})\mathbf{i} - (\frac{L}{2} \cos\theta\dot{\theta}) \mathbf{j}$\\ 
+The acceleration of the center of mass $\mathbf{a}_c  = (\ddot{x} -\frac{L}{2} (\cos\theta \dot{\theta}^2 + \sin\theta\ddot{\theta}) )\mathbf{i} + \frac{L}{2}(\sin\theta\dot{\theta}^2 - \cos\theta \ddot{\theta}) \mathbf{j}$\\\\
+Invoking force balance using Newton's $2^{nd}$ Law: $\sum \mathbf{F_R}=m\mathbf{a}$. In x-direction:	
+\beq
+	m\ddot{x}  - \frac{L}{2}(\sin\theta\ddot{\theta} + \cos \theta \dot{\theta}^2)=  - k_1x  
+\eeq
+In y-direction:
+\beq
+m \frac{L}{2}(\sin\theta\dot{\theta}^2 - \cos\theta \ddot{\theta}) = k_2\frac{L}{2} \sin\theta - mg
+\eeq
+Using moment balance (anti-clockwise moment is considered as positive): $\sum{M_R} = I_c \alpha = \frac{1}{12}mL^2\ddot{\theta}$
+\beq
+\begin{split}
+ \half(k_1xL\sin\theta + k_2\frac{L}{2}\sin\theta L \cos\theta) =  \frac{1}{12}mL^2\ddot{\theta} 
+\end{split}
+\eeq
+Note that there is no moment due to gravity as it passes through the center of mass.
+\section{Problem 2.9}
+The system shown in figure consists of two uniform rigid links of mass $m$ and length $L$, a massless roller free to move horizonatally and a linear spring of stiffness $k$. The links are hinged at both ends and when they are horizontal the spring is unstretched. Derive the equilibrium equation by means of the virtual work principle. The angle $\theta$ can be arbitrarily large.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{prob4_ques.pdf}
+	\label{fig:prob4_ques}
+\end{figure}
+
+The principle of virtual work requires the representation of forces and positions of each body in the system. This system is identified to contain 3 bodies; two of which have masses $m$ and the third one has mass $M$. Their positions vectors are as follows:
+\beq
+\begin{split}
+\mathbf{r}_1  & = \frac{L}{2}\cos\theta ~\mathbf{i} -\frac{L}{2}\sin\theta ~\mathbf{j} \\ 
+\mathbf{r}_2  & = \frac{3L}{2}\cos\theta ~\mathbf{i} -\frac{L}{2}\sin\theta ~\mathbf{j} \\ 
+\mathbf{r}_3  & = {2L}\cos\theta ~\mathbf{i}+0 ~\mathbf{j} \\ 
+\end{split}
+\eeq
+The variations of these positions are given as follows:
+\beq
+\begin{split}
+\delta\mathbf{r}_1  & = -\frac{L}{2}\sin\theta \delta\theta ~\mathbf{i} -\frac{L}{2}\cos\theta\delta\theta  ~\mathbf{j} \\ 
+\delta\mathbf{r}_2  & = -\frac{3L}{2}\sin\theta \delta\theta ~\mathbf{i} -\frac{L}{2}\cos\theta\delta\theta  ~\mathbf{j} \\ 
+\delta\mathbf{r}_3  & = -{2L}\sin\theta\delta\theta ~\mathbf{i}\\ 
+\end{split}
+\eeq
+The force vectors on each of these bodies:
+\beq
+\begin{split}
+\mathbf{F}_1 & =		   - \half {mg}\mathbf{j} \\
+\mathbf{F}_2 & = 		  	   - \half {mg}\mathbf{j} \\
+\mathbf{F}_3 & = -(k_2 + k_1)x \mathbf{i} - {Mg}\mathbf{j} \\
+\end{split}
+\eeq
+Virtual work principle states that 
+\beq
+\begin{split}
+\sum_{i=1}^3 \mathbf{F}_i\cdot\delta\mathbf{r}_i & = 0\\
+\mathbf{F}_1\cdot\delta\mathbf{r}_1 +\mathbf{F}_2\cdot\delta\mathbf{r}_2 + \mathbf{F}_3\cdot\delta\mathbf{r}_3 & =0\\
+\left( \half {mg}\frac{L}{2}\cos\theta + \half {mg}\frac{L}{2}\cos\theta + (k_2 + k_1)x  {2L}\sin\theta	\right) \delta\theta & =0\\
+\half mgL\cos\theta+ 2xL(k_2+k_1)\sin\theta & = 0\\
+\end{split}
+\eeq
+On further simplification we get:
+\beq
+\boxed{\tan\theta = -\dfrac{1}{4}\dfrac{mg}{x(k_2+k_1)}}
+\eeq
+\section{Problem 2.10}
+
+Derive the equation of motion for the double pendulum shown in the figure by means of the generalized principle of d'Alembert.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{prob5_ques.pdf}
+	\label{fig:prob5_ques}
+\end{figure}
+\\
+The double pendulum has two masses with position vectors
+\beq
+\begin{split}
+\mathbf{r}_1  & = L_1\sin\theta_1 ~\mathbf{i} -L_1\cos\theta_1 ~\mathbf{j} \\ 
+\mathbf{r}_2  & = (L_1\sin\theta_1+ L_2\sin\theta_2) ~\mathbf{i} - (L_1\cos\theta_1+L_2\cos\theta_2) ~\mathbf{j}
+\end{split}
+\eeq
+The variations of the position vector:
+\beq
+\begin{split}
+\delta\mathbf{r}_1  & = L_1\cos\theta_1 \delta\theta_1 ~\mathbf{i} + L_1\sin\theta_1  \delta\theta_1 ~\mathbf{j}\\ 
+\delta\mathbf{r}_2  & =  (L_1\cos\theta_1\dot{\theta_1}\delta\theta_1+ L_2\cos\theta_2\dot{\theta_2}\delta\theta_2) ~\mathbf{i} + (L_1\sin\theta_1\dot{\theta_1}\delta\theta_1+L_2\sin\theta_2\dot{\theta_2}\delta\theta_2)~\mathbf{j}\\
+\end{split}
+\eeq
+The velocities:
+\beq
+\begin{split}
+\mathbf{v}_1  & = L_1\cos\theta_1 \dot{\theta_1} ~\mathbf{i} + L_1\sin\theta_1\dot{\theta_1} ~\mathbf{j} \\ 
+\mathbf{v}_2  & = (L_1\cos\theta_1\dot{\theta_1}+ L_2\cos\theta_2\dot{\theta_2}) ~\mathbf{i} + (L_1\sin\theta_1\dot{\theta_1}+L_2\sin\theta_2\dot{\theta_2}) ~\mathbf{j}
+\end{split}
+\eeq
+The accelerations:
+\beq
+\begin{split}
+\mathbf{a}_1  & = L_1(\ddot{\theta_1}\cos\theta_1 -\dot{\theta_1}^2\sin\theta_1 ) ~\mathbf{i} + L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) ~\mathbf{j} \\ 
+\mathbf{a}_2  & = [L_1(\ddot{\theta_1}\cos\theta_1 -\dot{\theta_1}^2\sin\theta_1 ) + L_2(\ddot{\theta_2}\cos\theta_2 -\dot{\theta_2}^2 \sin\theta_2)] ~\mathbf{i} \\
+& +  [L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\dot{\theta_2}^2 \cos\theta_2)] ~\mathbf{j} \\ 
+\end{split}
+\eeq
+The force vectors on each of these masses:
+\beq
+\begin{split}
+\mathbf{F}_1 & =		   - {m_1g}\mathbf{j} \\
+\mathbf{F}_2 & = 		    - {m_2g_2}\mathbf{j} \\
+%\mathbf{F}_3 & = -(k_2 + k_1)x \mathbf{i} - {Mg}\mathbf{j} \\
+\end{split}
+\eeq
+
+\beq
+\sum_{i=1}^3 (\mathbf{F}_i -m_i\mathbf{a}_i)\cdot\delta\mathbf{r}_i = 0
+\eeq
+\beq
+(\mathbf{F}_1-m_1\mathbf{a}_1)\cdot\delta\mathbf{r}_1 + (\mathbf{F}_2 - m_2\mathbf{a}_2)\cdot\delta\mathbf{r}_2 =0 
+\eeq
+
+\beq
+(- {m_1g}-m_1L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1)).L_1\sin\theta_1  \delta\theta_1 +
+\eeq
+\beq
+(- {m_2g_2} -m_2[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\dot{\theta_2}^2 \cos\theta_2)].(L_1\sin\theta_1\dot{\theta_1}\delta\theta_1+L_2\sin\theta_2\dot{\theta_2}\delta\theta_2) =0
+\eeq
+Separate $\delta\theta_1$ and $\delta\theta_2$ in the above equation:
+\beq
+\begin{split}
+&(- {m_1gL_1\sin\theta_1}-m_1L_1L_1\sin\theta_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1)   \\
+&- {m_2g_2L_1\sin\theta_1\dot{\theta_1}} -m_2L_1\sin\theta_1\dot{\theta_1}[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)]    ).  \delta\theta_1 \\
+& - {m_2g_2L_2\sin\theta_2\dot{\theta_2}} -m_2L_2\sin\theta_2\dot{\theta_2}[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)].\delta\theta_2 =0 
+\end{split}
+\eeq
+$\delta\theta_1$ and $\delta\theta_2$ are arbitrary, they are not zero always. Therefore,
+\beq
+\begin{split}
+&(- {m_1gL_1\sin\theta_1}-m_1L_1L_1\sin\theta_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1)   \\
+&- {m_2g_2L_1\sin\theta_1\dot{\theta_1}} -m_2L_1\sin\theta_1\dot{\theta_1}[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)]    ) = 0 \\
+\end{split}
+\eeq
+\beq
+\begin{split}
+& - {m_2g_2L_2\sin\theta_2\dot{\theta_2}} -m_2L_2\sin\theta_2\dot{\theta_2}[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)]. =0 
+\end{split}
+\eeq
+These are the equations of motion. Further simplifications may be possible but are not explored here.
+\section{Problem 2.24}
+
+Derive the Lagrange equation of motion for the system consisting of a uniform rigid link of mass $m$ and length $L$ hinged at the upper end to a linear spring of stiffness $k$.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{prob6_ques.pdf}
+	\label{fig:prob6_ques}
+\end{figure}
+
+\begin{description}
+\item[1.~Finding Velocity:] The link is hinged at the upper end, the presence of spring between the hinge and the link enables the vertical motion of the link. The position vector of the center of mass 
+\beq 
+\mathbf{r}=(\frac{L}{2}\sin\theta) \mathbf{i} - (y+\frac{L}{2}\cos\theta)
+\eeq
+The velocity of the center of mass  
+\beq 
+\mathbf{v}=(\frac{L}{2}\cos\theta \dot{\theta}) \mathbf{i} - (\dot{y}-\frac{L}{2}\sin\theta\dot{\theta})\mathbf{j}
+\eeq
+
+\item[2.~Finding KE:]  The kinetic energy is given as:
+\beq
+\begin{split}
+\text{T} & = \text{T}_{trans} + \text{T}_{rot}\\ 
+  & = \half m \mathbf{v_c}\cdot\mathbf{v_c} + \frac{1}{12}mL^2\dot{\theta}^2\\
+  & = \half m \left[ (\frac{L}{2}\cos\theta \dot{\theta})^2 + (\dot{y}-\frac{L}{2}\sin\theta\dot{\theta}^2) \right]+ \frac{1}{12}mL^2\dot{\theta}^2\\
+\end{split}
+\eeq
+
+
+\item[3.~Finding PE:] The potential energy is due to the spring and the gravitational potential of the link of mass $m$.
+\beq
+\begin{split}
+\text{V}= &  \half k {y}^2  +  mg(y+\frac{L}{2} \cos\theta)
+\end{split}
+\eeq
+
+\item[4. Finding Lagrangian:] The lagrangian L = T~-~V
+\beq
+L = \half m \left[ (\frac{L}{2}\cos\theta \dot{\theta})^2 + (\dot{y}-\frac{L}{2}\sin\theta\dot{\theta}^2) \right]+ \frac{1}{12}mL^2\dot{\theta}^2 - \half k {y}^2  -  mg(y+\frac{L}{2} \cos\theta)
+\eeq
+
+\item[5.~Finding the partial derivatives:] Partial derivatives of the Lagrangian with respect to the unknowns are found to be
+\beq\label{partials}
+\begin{split}
+\pd{L}{y} &= -(mg+ky)\\
+\pd{L}{\dot{y}} &= \half m(2\dot{y} - L\dot{\theta}\sin\theta)\\
+\pd{L}{\theta} &= \half mL(g\sin\theta - \dot{\theta}\dot{y}\cos\theta)\\
+\pd{L}{\dot{\theta}}& = \frac{mL(5L\dot{\theta} - 6\dot{y}\sin\theta)}{12}\\
+\end{split}
+\eeq
+
+\item[6.~Find Lagrange Equations:] The Lagrange equation can be written as
+\beq
+\begin{split}
+\frac{d}{dt}\left( \pf{L}{\dot{y}} \right) - \pf{L}{{y}} &= X \\
+\frac{d}{dt}\left( \pf{L}{\dot{\theta}} \right) - \pf{L}{{\theta}} &= \Theta \\
+\end{split}
+\eeq
+With known values the Lagrange Equations become:
+\beq
+\begin{split}
+\frac{d}{dt}\left(\half m(2\dot{y} - L\dot{\theta}\sin\theta) \right) + (mg+ky)  &= 0 \\
+\frac{d}{dt}\left( \frac{mL(5L\dot{\theta} - 6\dot{y}\sin\theta)}{12}\right) -\half mL(g\sin\theta - \dot{\theta}\dot{y}\cos\theta)   &= 0 \\
+\end{split}
+\eeq
+Further simplification:
+\beq
+\begin{split}
+m\ddot{y}  - ky - \half mL\sin\theta\ddot{\theta} -\half mL\cos\theta\dot{\theta}^2 -mg &= 0\\
+\frac{mL}{12}\left(6\ddot{y}\sin\theta - 5L\ddot{\theta} + 6g{\sin\theta} \right) & = 0 \\
+\end{split}
+\eeq
+Finally,
+\beq
+\begin{split}
+\ddot{y}  - \frac{ky}{m} - \half L\sin\theta\ddot{\theta} -\half L\cos\theta\dot{\theta}^2 -g &= 0 \\
+6\ddot{y}\sin\theta - 5L\ddot{\theta} + 6g{\sin\theta} & = 0 \\
+\end{split}
+\eeq
+
+
+\end{description}
+
+\end{document}
+
+
+
+\beq
+\begin{split}
+&(- {m_1gL_1\sin\theta_1}-m_1L_1L_1\sin\theta_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1)).  \delta\theta_1 \\
+& + (- {m_2g_2} -m_2[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)].(L_1\sin\theta_1\dot{\theta_1}\delta\theta_1)\\
+& + (- {m_2g_2} -m_2[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)].(L_2\sin\theta_2\dot{\theta_2}\delta\theta_2) =0 
+\end{split}
+\eeq
+
+
+\beq
+\begin{split}
+&(- {m_1gL_1\sin\theta_1}-m_1L_1L_1\sin\theta_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1)).  \delta\theta_1 \\
+& + (- {m_2g_2L_1\sin\theta_1\dot{\theta_1}} -m_2L_1\sin\theta_1\dot{\theta_1}[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)].(\delta\theta_1)\\
+& + (- {m_2g_2L_2\sin\theta_2\dot{\theta_2}} -m_2L_2\sin\theta_2\dot{\theta_2}[L_1(\ddot{\theta_1}\sin\theta_1 +\dot{\theta_1}^2 \cos\theta_1) + L_2(\ddot{\theta_2}\sin\theta_2 +\\
+& \dot{\theta_2}^2 \cos\theta_2)].(\delta\theta_2) =0 
+\end{split}
+\eeq
+
