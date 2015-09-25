@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{FieldingText}
 J.~P. Fielding.
@@ -14,6 +14,23 @@ D.~Howe.
 MATLAB and Statistics Toolbox~Release 2015a.
 \newblock {\em version 8.5.0 (R2015a)}.
 \newblock The MathWorks Inc., Natick, Massachusetts, 2015.
+
+\bibitem{MattinglyText}
+J.~D. Mattingly, W.~H. Heiser, and D.~T. Pratt.
+\newblock {\em Aircraft Engine Design}.
+\newblock American Institute of Aeronautics and Astronautics, Reston, VA, 2nd
+  edition, 2002.
+
+\bibitem{MavrisNotes}
+D.~Mavris.
+\newblock {\em {Fixed Wing Aircraft Design I}}.
+\newblock {Lecture Notes, Georgia Institute of Technology}, 2015.
+
+\bibitem{Kroo2005}
+{N. E. Antoine and I. M. Kroo}.
+\newblock {Framework for Aircraft Conceptual Design and Environmental
+  Performance Studies}.
+\newblock {\em {AIAA Journal}}, {43, No. 10}, 2005.
 
 \bibitem{NicolaiText}
 L.~M. Nicolai.
@@ -31,5 +48,11 @@ D.~P. Raymer.
 \newblock {Modern Use of Spreadsheet Methods for Aircraft Design, Sizing, and
   Performance Analysis}.
 \newblock AIAA Paper, 2004-0534, 2004.
+
+\bibitem{US}
+1976 U.S.~standard atmosphere.
+\newblock {\em United States Committee on Extension to the Standard
+  Atmosphere}.
+\newblock U.S. Government Printing Office, Washington, D.C., 1976.
 
 \end{thebibliography}

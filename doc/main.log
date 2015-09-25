@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.13)  25 SEP 2015 04:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.13)  25 SEP 2015 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -555,29 +555,30 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 9.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 9.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 11--12
+Overfull \hbox (17.0pt too wide) in paragraph at lines 11--12
 [][] 
  []
 
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 14.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 14.
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--26
+LaTeX Warning: Reference `installandbenchmnark' on page 1 undefined on input li
+ne 26.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--27
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--26
+Underfull \hbox (badness 10000) in paragraph at lines 22--27
 
  []
 
@@ -585,20 +586,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--26
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Citation `rpf' on page 2 undefined on input line 28.
+LaTeX Warning: Reference `' on page 2 undefined on input line 29.
 
-[2] (./main.bbl)
 
-LaTeX Warning: Reference `benchmarking' on page 3 undefined on input line 59.
+LaTeX Warning: Reference `inputs' on page 2 undefined on input line 45.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
+[2] <figures/sizing_overview.pdf, id=155, 508.299pt x 305.943pt>
+File: figures/sizing_overview.pdf Graphic file (type pdf)
+
+<use figures/sizing_overview.pdf>
+Package pdftex.def Info: figures/sizing_overview.pdf used on input line 55.
+(pdftex.def)             Requested size: 432.05618pt x 260.05275pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./figures/sizing_overview.pdf>]
+
+LaTeX Warning: Reference `validation' on page 4 undefined on input line 147.
+
+[4] (./main.bbl [5])
+
+LaTeX Warning: Reference `benchmarking' on page 6 undefined on input line 180.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+[6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 75.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1A65BAC0F29D84B303A73C2ABE125A0A;524.
+(rerunfilecheck)             Checksum: 5FE1B429767ED9088D604D3B623A21C9;1863.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -606,29 +624,33 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 9123 strings out of 493304
- 136326 string characters out of 6139871
- 230751 words of memory out of 5000000
- 12378 multiletter control sequences out of 15000+600000
- 22247 words of font info for 89 fonts, out of 8000000 for 9000
+ 9206 strings out of 493304
+ 137452 string characters out of 6139871
+ 231215 words of memory out of 5000000
+ 12417 multiletter control sequences out of 15000+600000
+ 21580 words of font info for 86 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,6n,38p,1252b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,38p,1141b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (3 pages, 115527 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (6 pages, 230165 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 
