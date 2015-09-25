@@ -1,14 +1,35 @@
 \begin{thebibliography}{1}
 
+\bibitem{FieldingText}
+J.~P. Fielding.
+\newblock {\em Introduction to Aircraft Design}.
+\newblock Cambridge University Press, New York, NY, 1st edition, 1999.
+
+\bibitem{HoweText}
+D.~Howe.
+\newblock {\em Aircraft conceptual design synthesis}.
+\newblock Professional Engineering Publishing, London, 1st edition, 2000.
+
 \bibitem{MATLAB}
 MATLAB and Statistics Toolbox~Release 2015a.
 \newblock {\em version 8.5.0 (R2015a)}.
 \newblock The MathWorks Inc., Natick, Massachusetts, 2015.
+
+\bibitem{NicolaiText}
+L.~M. Nicolai.
+\newblock {\em Fundamentals of Aircraft Design}.
+\newblock E. P. Domicone Printing Services, Fairborn, OH, 1st edition, 1975.
 
 \bibitem{RaymerText}
 D.~P. Raymer.
 \newblock {\em Aircraft Design: A Conceptual Approach}.
 \newblock American Institute of Aeronautics and Astronautics, Reston, VA, 3rd
   edition, 1999.
+
+\bibitem{Raymer2004}
+D.~P. Raymer.
+\newblock {Modern Use of Spreadsheet Methods for Aircraft Design, Sizing, and
+  Performance Analysis}.
+\newblock AIAA Paper, 2004-0534, 2004.
 
 \end{thebibliography}

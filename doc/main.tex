@@ -1,7 +1,8 @@
-\documentclass[pdftex,11pt,letter]{article}
+\documentclass[pdftex,12pt,letter]{article}
 \input{include.tex}
+\usepackage[superscript]{cite}
 
-\title{\textbf{TASS: A Toolkit for Aircraft Sizing and Synthesis}}
+\title{\textbf{\textsc{TASS}: A Toolkit for Aircraft Sizing and Synthesis}}
 \author{Komahan Boopathy~~\url{komahan@gatech.edu}} \date{\today}
 \begin{document}
 
@@ -10,18 +11,66 @@
 \rule{\linewidth}{2pt}
 
 \begin{abstract}
-A Toolkit for Aircraft Sizing and Synthesis (TASS), capable of performing sizing and synthesis calculations for conceptual design of aircraft is developed in Matlab~\cite{MATLAB}. TASS implements energy-based constraint and weight fraction approach for the mission sizing analyses.  The performance of TASS is benchmarked against the known metrics of a transonic jet fighter aircraft F-86L Sabre (Sabrejet).
+A  \ul{T}oolkit for \ul{A}ircraft \ul{S}izing and \ul{S}ynthesis (TASS), capable of performing sizing and synthesis calculations  in the context of conceptual design of aircraft is developed in Matlab\cite{MATLAB}. TASS implements energy-based constraint and weight fraction approach for the mission sizing analyses.  The performance of TASS is benchmarked against the known metrics of a transonic jet fighter aircraft F-86L Sabre (Sabrejet).
 \end{abstract}
 
-\section{Introduction and Objectives}
+\section{Introduction}
 
+Design of aircraft is subject to tens of thousands of constraints that span across a variety of disciplines such as aerodynamics, structures, controls and performance\cite{NicolaiText,FieldingText,HoweText,RaymerText}. Examples of such constraints, to name a few are: achieving a long cruise range, minimizing the take-off distance, fuel-efficient engines, stealth capabilities for reconnaissance and so on. These constraints are indeed the ones that drive the design and play a pivotal role in shaping the end-design. There has been an increased interest in exploring more at initial stages of design to identify conventional as well as non-conventional configurations -- a strategy that helps one to get a better insight of potential configurations that can meet the design requirements and eliminate restrospective changes that may be due at later stages in design process, that are known to be prohibitively expensive. 
+\\\\
+Similar motivations have led to the development of tools that ably perform conceptual analysis in various platforms\cite{Raymer2004}. To this end, this work too aims to develop a toolkit in Matlab\cite{MATLAB} known shortly as TASS, that performs some of the very early phases of aircraft design \ie~the sizing and synthesis. The scope of the current work is limited to the conceptual design phase of aircraft design; more advanced phases in aircraft design (preliminary, detailed design \etc) fall beyond the scope of the current work. Nevertheless, modularity is a key consideration in the development of the toolkit, which enables further advancements straight-forward function of time.
+\\\\
+A brief introduction of the concept under study and a summary of the mission and requirements are  outlined next. Energy based constraint analyses form an attractive way to start with aircraft design. The main advantage of energy-based approach over conventional approaches is that it employs Lagrangian paradigm of mechanics, as opposed to Newton's world of vector mechanics. The key idea is that aircraft is treated as a system that converts energy from one form to another as the mission progresses. For example, combustion in the engines convert the chemical energy of the fuel into thermal energy, which in-turn accelerates the gases to rotate the turbines to provide mechanical energy to sustain motion. It is easier to think in terms of scalars such as kinetic energy (depends on velocity) and potential energy (depends on position), compared to resolving forces (e.g. lift, thrust) in along different directions (e.g. vertical, horizontal). Due to these advantages, \textsc{TASS} preferably employs energy based constraint analyses. The mathematical and physical models used in individual disciplines are explained as and when they are introduced in later sections and are not explained here in the spirit of brevity.
+\\\\
+This report is organized as follows. Section~\ref{theory} outlines the mathematical models behind the aircraft sizing and synthesis procedure. Section~\ref{requirements} outlines the functionality that is expected from the toolkit. Section~\ref{installandbenchmnark} contains detailed step-by-step instructions on the working of the tool with the help of an example. Section~\ref{conclusion} concludes the report highlighting the key aspects of the tool and lays-out scope for further improvements to the toolkit. 
 
-The purpose of this effort is to develop a toolkit in Matlab to perform sizing and synthesis of aircraft configurations at the level of conceptual design. The tool is named ASSIST. 
+\section{Requirements of the Toolkit}\label{requirements}
+The requirements for this toolkit are outlined in the project description\cite{rpf}.
 
- that applies the concepts in prelimi of energy based constraint~\cite{RaymerText}.
+\section{Theory}\label{theory}
+
+This section provides a quick outline of the theory under TASS. A rather comprehensive discussion of these topics can be found in the literature\cite{NicolaiText,FieldingText,HoweText,RaymerText}.
+
+\section{Installation and Benchmarking}\label{installandbenchmnark}
+
+\subsection{Getting Started}
+
+TASS uses native Matlab code for all of its functionality -- including initialization, iterative calculations and graphics, therefore a working version of Matlab\cite{MATLAB} is sufficient. The software is tested to work on both UNIX and Windows based workstations. The source code can be obtained by using \texttt{git clone https://github.com/komahanb/tass.git} from a \textit{terminal} or \textit{shell} program or by downloading \texttt{tass-master.zip} file and extracting it in a working folder of convenience. 
+
+%\subsection{Mission Analysis}
+%\subsection{Conceptual Design}
+
+\section{Conclusion}\label{conclusion}
+
+This work presented a generic toolkit that performs sizing and synthesis of the aircraft configurations at the conceptual design level. The toolkit is provided with a graphical user-interface that helps non-expert users to simulate different requirements at the same time. It is validated against a known configuration of F-86 Sabrejet. 
 
 \bibliography{KomahannoVol}
 \bibliographystyle{plain}	
+
+\appendix
+
+\section{Flexibility of the Tool}
+\label{appendix:flexibility}
+
+\subsection{Versatility of the Tool}
+
+\begin{enumerate}
+
+\item The Graphical User Interface (GUI) takes the set of inputs and perform the analyses. As long as the inputs specified are within the validity of the underlying mathematical models, the tool will work for any set of requirements as explained in Section~\ref{benchmarking}.
+
+\item TASS can operate with both English and SI units
+
+\item TASS employs interpolations and extrapolations whenever it encounters data that are be rather difficult to supply or unavailable (e.g.) 
+
+\end{enumerate}
+
+\subsection{Challenges and Cons}
+
+\begin{enumerate}
+
+\item  Since it is extremely laborious to implement sanity checks on the user-supplied values, it is recommended that the users proactively consider the physical meaning of the values supplied (e.g. range, rate of climb)
+
+\end{enumerate}
 
 \end{document}
 
@@ -31,30 +80,10 @@ The purpose of this effort is to develop a toolkit in Matlab to perform sizing a
 	\label{fig:prob1_ques}
 \end{figure}
 
-sizing & synthesis,
-
-energy-based
-constraint analysis method
-
-weight fraction approach to the mission sizing analysis
-
-An analysis tool
-capable of fully implementing sizing & synthesis calculations must be created and validated against existing data.
-
-benchmark your tool against the known performance of a reference aircraft, provided in this project
-description
-
-This section should also introduce the concept under study and briefly summarize the mission and
-requirements.
-
+This section should also introduce the concept under study and briefly summarize the mission and requirements.
 
 predicted takeoff gross weight, T/W, and W/S, calculate the predicted maximum required thrust
-at sea level and the predicted wing area. Compare these predicted values to the known values within the Standard
-Aircraft Characteristics.
-
-
-
-%%
+at sea level and the predicted wing area. Compare these predicted values to the known values within the Standard Aircraft Characteristics.
 
 \cite{MavrisNotes}
 ~\cite{NicolaiText}
@@ -62,3 +91,15 @@ Aircraft Characteristics.
 ~\cite{HoweText}
 ~\cite{RaymerText}
 ~\cite{Raymer2004}
+
+layout
+graphs of interest
+scroll bars -- things happen
+
+
+user interface
+clean figures
+
+
+The axial stresses and nodal displacements used in Eq.~(\ref{eq:3bardet}) are calculated using a finite element procedure described in Appendix~\ref{appendix:3bar}.
+

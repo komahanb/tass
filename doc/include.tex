@@ -2,6 +2,19 @@
 \usepackage{cancel}
 \usepackage{amsmath,amssymb,latexsym,float,epsfig}
 \usepackage{framed,color,url,fancybox,fullpage,booktabs,subfigure,wrapfig,chngpage,setspace}
+
+\usepackage{amsfonts,caption}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{color,epsfig}
+\usepackage{bm}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace,mathtools}
+\usepackage{float}
+\usepackage[section]{placeins} % places floats within the section
+\usepackage[superscript]{cite}
+
+
 \newcommand{\ssection}[1]{\section[#1]{\centering\normalfont\scshape #1}}
 \newcommand{\ssubsection}[1]{\subsection[#1]{\raggedright\normalfont\itshape #1}}
 \newcommand\norm[1]{\left\lVert#1 \right\rVert}
@@ -9,13 +22,12 @@
 \newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
-\graphicspath{{./figures/}}
 \usepackage{epstopdf,fancyvrb,cite,hyperref,jvlisting}
 %\usepackage[options]{mcode}
 
 \usepackage{pdflscape}%http://texblog.org/2007/11/10/landscape-in-latex/
 
-\newcommand{\ul}[1]{\underline[#1]}
+\newcommand{\ul}[1]{\underline #1}
 
 % Define commands 
 \newcommand{\half}{\ensuremath{\frac{1}{2}}}
@@ -25,7 +37,12 @@
 \newcommand{\eeq}{\end{equation}}
 \newcommand{\bdm}{\begin{displaymath}}
 \newcommand{\edm}{\end{displaymath}}
+
 \newcommand{\etal}[0]{{\em et al.}}
+\newcommand{\etc}[0]{{\em etc.}}
+\newcommand{\ie}[0]{{\em i.e.,}}
+
+
 \newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
 \newcommand{\pf}[2]{\dfrac{d #1}{d #2}}
 \newcommand{\pdt}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}

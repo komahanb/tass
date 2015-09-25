@@ -1,7 +1,0 @@
-#!/bin/bash
-rm *.aux
-pdflatex Draft.tex
-bibtex Draft 
-pdflatex Draft.tex
-pdflatex Draft.tex
-evince Draft.pdf &
