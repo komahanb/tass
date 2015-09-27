@@ -17,38 +17,94 @@ A  \ul{T}oolkit for \ul{A}ircraft \ul{S}izing and \ul{S}ynthesis (TASS), capable
 \section{Introduction and Motivation}
 
 Design of aircraft is subject to tens of thousands of constraints that span across a variety of disciplines such as aerodynamics, structures, controls and performance\cite{NicolaiText,FieldingText,HoweText,RaymerText}. Examples of such constraints, to name a few are: achieving a long cruise range, minimizing the take-off distance, fuel-efficient engines, stealth capabilities for reconnaissance and so on. These constraints are indeed the ones that drive the design and play a pivotal role in shaping the end-design. There has been an increased interest in exploring more at initial stages of design to identify conventional as well as non-conventional configurations -- a strategy that helps one to get a better insight of potential configurations that can meet the design requirements and eliminate restrospective changes that may be due at later stages in design process, that are known to be prohibitively expensive. 
-%\\\\
-
+\\\\
 Similar motivations have led to the development of tools that ably perform conceptual analysis in various platforms\cite{Raymer2004, Kroo2005}. To this end, this work too aims to develop a toolkit in Matlab\cite{MATLAB} known shortly as TASS, that performs some of the very early phases of aircraft design \ie~the sizing and synthesis. The scope of the current work is limited to the conceptual design phase of aircraft design; more advanced phases in aircraft design (preliminary, detailed design \etc) fall beyond the scope of the current work. Nevertheless, modularity is a key consideration in the development of the toolkit, which enables further advancements a function of time.
 \\\\
 Energy based constraint analyses form an attractive way to start with aircraft design. The main advantage of energy-based approach over conventional approaches is that it employs Lagrangian paradigm of mechanics, as opposed to Newton's world of vector mechanics. The key idea is that aircraft is treated as a system that converts energy from one form to another as the mission progresses. For example, combustion in the engines convert the chemical energy of the fuel into thermal energy, which in-turn accelerates the gases to rotate the turbines to provide mechanical energy to sustain motion. It is easier to think in terms of scalars such as kinetic energy (depends on velocity) and potential energy (depends on position), compared to resolving forces (e.g. lift, thrust) in along different directions (e.g. vertical, horizontal). Due to these advantages, \textsc{TASS} preferably employs energy based constraint analyses. The mathematical and physical models used in individual disciplines are explained as and when they are introduced in later sections and are not explained here in the spirit of brevity.
 \\\\
 This report is organized as follows. Section~\ref{theory} outlines the mathematical models behind the aircraft sizing and synthesis procedure. Section~\ref{requirements} outlines the functionality that is expected from the toolkit. Section~\ref{installandbenchmnark} contains detailed step-by-step instructions on the working of the tool with the help of an example. Section~\ref{conclusion} concludes the report highlighting the key aspects of the tool and lays-out scope for further improvements to the toolkit. 
 
-\section{Requirements of the Toolkit}\label{requirements}
-A brief introduction of the concept under study and a summary of the mission and requirements are  outlined next. The conceptual design process begins with a defined set of requirements. These requirements lay-out specific constraints and design goals that the end-system must be capable of achieving.  These goals and constraints are often presented the form of Request for Proposal (RFP). RFP for the fighter is given in Appendix~\ref{}. 
-
-
-
-Functional requirements and performance requirements
 
 \section{Getting Started}\label{layout}
-
-This section is devoted to provide a high-level overview of the working of the software.  All the discussions in this section are organized in terms of the benchmarking test case Sabrejet F-86 L\cite{}.
-
+This section is devoted to provide a high-level overview of the of the software.
 
 \subsection{Installation}
-
 TASS uses native Matlab code for all of its functionality -- including initialization, iterative calculations and graphics, therefore a working version of Matlab\cite{MATLAB} is sufficient. The software is tested to work on both UNIX and Windows based workstations. The source code can be obtained by using \texttt{git clone https://github.com/komahanb/tass.git} from a \textit{terminal} or \textit{shell} program or by downloading \texttt{tass-master.zip} file and extracting it in a working folder of convenience. 
 
 \subsection{Input Layout}
 A Graphical User Interface (GUI) is designed to collect all the mission-specific inputs that the user supplies to the software. From an user-standpoint these input parameters are decided based on the complete break-down of mission requirements (e.g. humanitarian, rescue, military missions). Table~\ref{inputs} presents the typical inputs that the user is expected to provide to the software. 
 
 \subsection{Output Layout}
-Output layout contains a collection of information interms of values and plots that the user would expect to see from the software. The following are the list of values, tables and plots that TASS is able to present to the user.
+Output layout contains a collection of information interms of values and plots that the user can get from the software.  TASS provides  a constraint analysis plot and enables the user to directly identify a design point in terms of thrust to weight ratio and wing loading. It also provides a mission analysis for the sizing of the system indicating the converged estimated weight and weight contributions from the different weight groups. The following is a comprehensive list of values, tables and plots that TASS is able to present to the user.
+
+\section{Benchmarking TASS}
+A brief introduction of the concept under study and a summary of the mission and requirements are  outlined next\cite{MavrisNotes}. The design produced by TASS will be compared to the design of the actual aircraft.
+
+\subsection{Aircraft Requirements}\label{requirements}
+ The conceptual design process begins with a defined set of requirements. These requirements lay-out specific constraints and design goals that the end-system must be capable of achieving.  These goals and constraints are often presented the form of Request for Proposal (RFP). %RFP for the fighter is given in Appendix~\ref{}. 
+
+\subsubsection{Functional Requirements}
+The functional requirement of the aircraft is to carryout a military mission, which is:
+\begin{itemize}
+\item to carry a crew member weighing  $210~lbs$ 
+\item to carry a payload of $432~lb$
+\end{itemize}
+
+\subsubsection{Performance Requirements}
+Table~\ref{tab:requirements} breaks-down the performance requirements of the aircraft to be designed using the TASS. 
+
+\begin{table}[h]
+\caption{Requirements of the fighter aircraft and for different stages in the mission profile}
+\centering 
+\begin{tabular}{c| c| c}
+\hline\hline
+{Segment} & Phase       & Performance Requirements \\
+\hline\hline
+0-1 	& Takeoff 	& Distance $4400~ft$ \\
+	&		& Clear obstacle at $50~ft$\\
+	& 		& Maximum power with afterburners\\
+	& 		& Air speed $1200~ft/s$ \\
+	&		& Sea level runway at $90~F$\\
+	&		& Maximum rate of climb $90~ft/s$\\
+\hline
+1-2	& Climb		& Altitude 35400~ft \\
+	& 		& Full military power without afterburners\\
+	&		& Maximum rate of climb $90~ft/s$\\
+\hline
+2-3 	& Cruise climb	& Altitude 38700~ft \\
+	&		& Distance 550 nautical miles \\
+	&		& Cruise speed 458 knots\\
+	&		& Normal power \\
+\hline
+3-4 	& Loiter	& Altitude 38700 ft\\
+	&		& 10 minutes loiter \\
+	& 		& normal power\\
+\hline
+4-5	& Climb		& Altitude 47550 ft\\
+\hline
+5-6	& Combat 	& Maximum power with afterburners \\
+	&		& Duration 5 minutes \\
+	& 		& Speed 536 knots \\
+\hline
+6-7	& Cruise 	& Altitude 37000 ft\\
+	& 		& Distance 550 nautical miles\\
+	&		& Normal power\\
+\hline
+7-8	& Loiter	& 10 minutes  \\	
+	& 		& Altitude 35000 ft\\
+	&		& Maximum endurance conditions \\
+\hline
+8-9	& Landing	& Distance 5000 ft \\
+	&		& Without highilift devices\\	
+	&		& 10$\%$ fuel reserve\\
+\hline\hline
+\end{tabular}
+\label{tab:requirements}
+\end{table}
+
 
 \section{Architecture of the Toolkit}\label{theory}
-This section provides an outline of the theory, physical and mathematical models used in TASS. A rather comprehensive discussion on these topics can be found in the literature\cite{MattinglyText,NicolaiText,FieldingText,HoweText,RaymerText}. Figure~\ref{fig:sizing_overview} provides a generic overview of the elements involved in the sizing and synthesis process. As it can be seen, \emph{constraint analyses} and \emph{weight estimations} are pivotal in producing the design.
+This section provides an outline of the theory, physical and mathematical models used in TASS. A rather comprehensive discussion on these topics can be found in the literature\cite{MattinglyText,NicolaiText,FieldingText,HoweText,RaymerText}. Figure~\ref{fig:sizing_overview} provides a generic overview of the elements involved in the sizing and synthesis process. As it can be seen, \emph{constraint analyses} and \emph{weight estimations} are pivotal in producing the design.  All the discussions in this section are organized in terms of the benchmarking test case Sabrejet F-86 L described in Section~\ref{requirements}.
 
 \begin{figure}[h!]
 	\centering
@@ -129,18 +185,19 @@ By manipulating Eq.~\ref{eq:energy} various constraints pertaining to the missio
 
 \subsubsection{Takeoff Ground Roll (lots of Thrust)}
 
-\subsubsection{Takeoff Ground Roll ( not so much Thrust)}
+\subsubsection{Takeoff Ground Roll (not so much Thrust)}
 
 \subsubsection{Braking Roll}
 
 \subsubsection{Service Ceiling}
 
 \subsection{Weight Estimation}
-The  takeoff gross weight $W_{TO}$ is estimated as
+
+The  takeoff gross weight $W_{TO}$ can be estimated using
 \beq\label{eq:takeoff_weight}
 W_{TO} = W_C + W_P +W_E +W_F
 \eeq
-where $W_C$ is the crew weight, $W_P$ is the payload weight, $W_E$ is the empty weight and $W_F$ is the fuel weight.
+where $W_C$ is the crew weight, $W_P$ is the payload weight, $W_E$ is the empty weight and $W_F$ is the fuel weight. The design is to be done to carry a crew member who weighs $210~lbs$ and  a payload of $432~lbs$. It is rather difficult to estimate the empty and fuel weight compared to the other counterparts.
 
 
 \section{Conceptual Design of the Benchmark Fighter}
