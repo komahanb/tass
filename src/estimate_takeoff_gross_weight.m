@@ -1,4 +1,4 @@
-function [ w_t ] = estimate_takeoff_gross_weight( w_p, w_c, fuel_frac )
+function [ w_e , w_t ] = estimate_takeoff_gross_weight( w_p, w_c, fuel_frac )
 %% estimate_takeoff_gross_weight estimates the takeoff gross weight
 %
 %  Performs iterations to estimate the takeoff gross weight
@@ -17,6 +17,7 @@ while abs(temp-w_t)>1 && temp<500
     w_t  = (w_p)/(1 - fuel_frac - get_empty_weight_fraction(temp) );
     temp = temp+50; % add 50 lb each iteration
 end
+w_e = get_empty_weight_fraction(temp)*w_t;
 if temp == 500
     error('Weight estimate did not converge')
 end
