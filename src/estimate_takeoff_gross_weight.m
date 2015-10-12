@@ -14,7 +14,7 @@ w_t  = (w_p+w_c)/(1 - fuel_frac - get_empty_weight_fraction(temp));
 temp = 1; 
 while abs(temp-w_t)>1 && temp<500
     temp = w_t;
-    w_t  = (w_p)/(1 - fuel_frac - get_empty_weight_fraction(temp) );
+    w_t  = (w_p+w_c)/(1 - fuel_frac - get_empty_weight_fraction(temp) );
     temp = temp+50; % add 50 lb each iteration
 end
 w_e = get_empty_weight_fraction(temp)*w_t;

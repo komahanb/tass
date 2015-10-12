@@ -15,7 +15,7 @@ function [ w_s, t_w ] = cruise_climb(h1, h2, v_cruise_fts, r_cruise_ft, k1, k2, 
 
 t_cruise_s      = r_cruise_ft/v_cruise_fts;
 dh              = h2-h1;
-dh_dt           = dh/t_cruise_s
+dh_dt           = dh/t_cruise_s;
 
 [rho1,~,~,~,~,~]              = stdatmo(h1,0,'US');
 [rho2,~,~,~,~,~]              = stdatmo(h2,0,'US');
@@ -24,7 +24,7 @@ dh_dt           = dh/t_cruise_s
 rho=0.5*(rho1+rho2);
 
 %T = RtoF(temp);
-q               = 0.5*rho*v_cruise_fts^2
+q               = 0.5*rho*v_cruise_fts^2;
 
 c1              = q/beta;
 c2              = beta/alpha;
