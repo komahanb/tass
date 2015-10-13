@@ -14,7 +14,7 @@ function [ w_s, t_w ] = constant_speed_turn(h, v_turn, n, k1, k2, c_d0, alpha, b
 %   array of wing loading
 
 [rho,~,~,~,~,~]              = stdatmo(h,0,'US');
-q               = 0.5*rho*v_turn^2
+q               = 0.5*rho*v_turn^2;
 
 c1              = q/beta;
 c2              = beta/alpha;

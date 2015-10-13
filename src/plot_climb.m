@@ -1,19 +1,25 @@
-%% CRUISE CLIMB (alpha, beta, rho are treated here as constants)
+%function [  ] = plot_climb()
+%% CLIMB
+clear;
+global_constants();
 
 v_cruise_kts    = 458;                      % cruise velocity [kts]
 v_cruise_fts    = v_cruise_kts*kts_to_fts;  % cruise velocity [ft/s]
 
 %altitude changes as it is cruise climb
-h1              = 35400;                    % ft
-h2              = 38700;                    % ft
+h               = 35400;                    % ft
+dh_dt           = 90;                       % ft/s
+dT              = 0;
 
-%range covered during cc
-r_cruise_nm     = 550;                      % nautical miles
-r_cruise_ft     = r_cruise_nm*nm_to_ft;
+beta            = 0.98;                     % assumed
+alpha           = thrust_lapse(v_cruise_fts,h,0,'mil');
 
-beta            = 0.99;                     % assumed
-alpha           = thrust_lapse(v_cruise_fts,(h1+h2)/2,0,'mil');
+[k1, cd0]       = drag_polar(h,dT,v_cruise_fts);
+k2              = 0 ;
 
-[w_s, t_w] = cruise_climb(h1,h2,v_cruise_fts,r_cruise_ft,k1,k2,cd0,alpha,beta);
+[w_s, t_w]      = climb(h,v_cruise_fts,dh_dt,alpha,beta,k1,k2,cd0);
 
-plt = plot(w_s,t_w);
+draw_constraint(w_s,t_w);
+
+%plot(w_s,t_w,'linewidth',2);
+%end
