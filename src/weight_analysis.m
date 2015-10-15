@@ -101,7 +101,24 @@ time_combat = str2num(get(handles.time_combat,'String'));
 C_cruise = str2num(get(handles.C_cruise,'String'));
 C_loiter = str2num(get(handles.C_loiter,'String'));
 C_combat = str2num(get(handles.C_combat,'String'));
-weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat);
+W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat);
+%fprintf('------------------------------------\n')
+%fprintf('Weights Breakdown:\n')
+%fprintf('------------------------------------\n')
+%fprintf('Payload Weight | %0.0f [lbs]  | %0.3f\n',100)
+%fprintf('Crew Weight    | %0.0f [lbs]  | %0.3f\n',w_c,fuel_frac)
+%fprintf('Empty Weight   | %0.0f [lbs]  | %0.3f\n',w_e,fuel_frac)
+%fprintf('Fuel Weight    | %0.0f [lbs]  | %0.3f\n',w_f,fuel_frac)
+%fprintf('------------------------------------\n')
+%fprintf('Gross Weight   | %0.0f [lbs] | %0.3f\n',w_to,fuel_frac)
+%fprintf('------------------------------------\n')
+%mass = handles.metricdata.density * handles.metricdata.volume;
+set(handles.wp, 'String', round(W(1)));
+set(handles.wc, 'String', round(W(2)));
+set(handles.we, 'String', round(W(3)));
+set(handles.wf, 'String', round(W(4)));
+set(handles.gto, 'String', round(sum(W)));
+
 
 
 function w_c_Callback(hObject, eventdata, handles)
