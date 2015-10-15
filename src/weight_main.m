@@ -1,11 +1,11 @@
 %% Weight Analysis
-function [W] = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat, time_combat)
+function [W] = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat, time_combat,method)
 % Calculations
 
 fuel_frac       = initial_fuel_fraction(v_cruise_kts,R_nm,loiter_time_min,p_res,C_cruise, C_loiter, C_combat,time_combat);   % estimated fuel_fraction
-w_to            = estimate_takeoff_gross_weight(w_p,w_c,fuel_frac, A, B);
+w_to            = estimate_takeoff_gross_weight(w_p,w_c,fuel_frac, A, B,method);
 w_f             = fuel_frac*w_to;
-empty_frac      = get_empty_weight_fraction(A, B, w_to);
+empty_frac      = get_empty_weight_fraction(A, B, w_to,method);
 w_e             = empty_frac*w_to;
 W               = [w_p  w_e w_c w_f];
 %% plot

@@ -93,8 +93,9 @@ try
     time_combat = str2num(get(handles.time_combat,'String'));
     C_cruise = str2num(get(handles.C_cruise,'String'));
     C_loiter = str2num(get(handles.C_loiter,'String'));
-    C_combat = str2num(get(handles.C_combat,'String'));
-    W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat);
+    C_combat = str2num(get(handles.C_combat,'String'));  
+    method = lower(get(get(handles.method,'SelectedObject'), 'String')); %raymer/roskam empty weight
+    W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat, method);
     %fprintf('------------------------------------\n')
     %fprintf('Weights Breakdown:\n')
     %fprintf('------------------------------------\n')
@@ -112,6 +113,7 @@ try
     set(handles.wf, 'String', round(W(4)));
     set(handles.gto, 'String', round(sum(W)));
 catch
+    disp('Error Occurred');
     set(handles.wp, 'String', 'No Real Solution Exists!');
     set(handles.wc, 'String', 'No Real Solution Exists!');
     set(handles.we, 'String', 'No Real Solution Exists!');
