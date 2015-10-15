@@ -40,7 +40,8 @@ T_mil           = 5550;                     % maximum thrust without afterburner
 T_normal        = 5100;                     % thrust at normal power setting
 
 % TSFC
-C_mil_1         = 1.45/3600; % s-1
+C_mil_1         = 1.45/3600; % s-1 
 C_mil_2         = 1.45/3600; % s-1
 C_max           = 2/3600; %s-1
-         
+
+C_loiter        = 0.6/3600; %s-1 Table 2.2 Raymer         

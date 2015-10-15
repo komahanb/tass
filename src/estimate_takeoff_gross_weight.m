@@ -1,4 +1,4 @@
-function [ w_e , w_t ] = estimate_takeoff_gross_weight( w_p, w_c, fuel_frac )
+function [w_t ] = estimate_takeoff_gross_weight( w_p, w_c, f_fuel, A, B )
 %% estimate_takeoff_gross_weight estimates the takeoff gross weight
 %
 %  Performs iterations to estimate the takeoff gross weight
@@ -9,17 +9,20 @@ function [ w_e , w_t ] = estimate_takeoff_gross_weight( w_p, w_c, fuel_frac )
 %       (2) mission profile must be the same
 
 % Estimation of gross weight
-temp = w_p + w_c + 100; % Initial guess for gross weight
-w_t  = (w_p+w_c)/(1 - fuel_frac - get_empty_weight_fraction(temp)); 
-temp = 1; 
-while abs(temp-w_t)>1 && temp<500
-    temp = w_t;
-    w_t  = (w_p+w_c)/(1 - fuel_frac - get_empty_weight_fraction(temp) );
-    temp = temp+50; % add 50 lb each iteration
+%guess  =   w_p + w_c+13000;
+%disp('sdhfaslkjfhlsakjh')
+%clc;
+cnt= 0;
+guess  = 2*(w_p +w_c);
+actual  =  guess /(1-f_fuel - get_empty_weight_fraction(A, B, guess));
+while (abs(guess-actual)) > 1 && cnt<=500
+        %cnt,guess, actual,get_empty_weight_fraction(A, B, guess)
+    guess  =   actual;
+    actual  = (w_p + w_c )/(1-f_fuel - get_empty_weight_fraction(A, B, guess));
+    %actual  =  guess /(1-f_fuel - get_empty_weight_fraction(guess));
+    cnt = cnt + 1 ;
+    %error('sdfsd')
 end
-w_e = get_empty_weight_fraction(temp)*w_t;
-if temp == 500
-    error('Weight estimate did not converge')
-end
+w_t = actual;
 end
 
