@@ -114,8 +114,8 @@ W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cru
 %fprintf('------------------------------------\n')
 %mass = handles.metricdata.density * handles.metricdata.volume;
 set(handles.wp, 'String', round(W(1)));
-set(handles.wc, 'String', round(W(2)));
-set(handles.we, 'String', round(W(3)));
+set(handles.wc, 'String', round(W(3)));
+set(handles.we, 'String', round(W(2)));
 set(handles.wf, 'String', round(W(4)));
 set(handles.gto, 'String', round(sum(W)));
 
@@ -411,11 +411,18 @@ set(handles.R_nm ,'String', '550');
 set(handles.loiter_time ,'String', '10');
 set(handles.p_res ,'String', '10');
 set(handles.time_combat ,'String', '10');
-set(handles.C_cruise ,'String','0.6');
+set(handles.C_cruise ,'String','1.4');
 set(handles.C_loiter ,'String', '0.6');
 set(handles.C_combat ,'String','2.0');
 pie(1);
 title('Gross Takeoff Weight Breakdown');
+set(handles.we ,'String','');
+set(handles.wp ,'String','');
+set(handles.wf ,'String','');
+set(handles.wc ,'String','');
+set(handles.gto ,'String','');
+
+
 
 
 % --- Executes on key press with focus on reset and none of its controls.
