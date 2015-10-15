@@ -81,43 +81,43 @@ function compute_weight_Callback(hObject, eventdata, handles)
 % hObject    handle to compute_weight (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-w_p = str2num(get(handles.w_p,'String'));
-w_c = str2num(get(handles.w_c,'String'));
-
-
-A = str2num(get(handles.A,'String'));
-B = str2num(get(handles.B,'String'));
-
-v_cruise_kts = str2num(get(handles.v_cruise_kts,'String'));
-R_nm = str2num(get(handles.R_nm,'String'));
-
-loiter_time_min = str2num(get(handles.loiter_time,'String'));
-p_res = str2num(get(handles.p_res,'String'));
-
-
-time_combat = str2num(get(handles.time_combat,'String'));
-
-C_cruise = str2num(get(handles.C_cruise,'String'));
-C_loiter = str2num(get(handles.C_loiter,'String'));
-C_combat = str2num(get(handles.C_combat,'String'));
-W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat);
-%fprintf('------------------------------------\n')
-%fprintf('Weights Breakdown:\n')
-%fprintf('------------------------------------\n')
-%fprintf('Payload Weight | %0.0f [lbs]  | %0.3f\n',100)
-%fprintf('Crew Weight    | %0.0f [lbs]  | %0.3f\n',w_c,fuel_frac)
-%fprintf('Empty Weight   | %0.0f [lbs]  | %0.3f\n',w_e,fuel_frac)
-%fprintf('Fuel Weight    | %0.0f [lbs]  | %0.3f\n',w_f,fuel_frac)
-%fprintf('------------------------------------\n')
-%fprintf('Gross Weight   | %0.0f [lbs] | %0.3f\n',w_to,fuel_frac)
-%fprintf('------------------------------------\n')
-%mass = handles.metricdata.density * handles.metricdata.volume;
-set(handles.wp, 'String', round(W(1)));
-set(handles.wc, 'String', round(W(3)));
-set(handles.we, 'String', round(W(2)));
-set(handles.wf, 'String', round(W(4)));
-set(handles.gto, 'String', round(sum(W)));
+try
+    w_p = str2num(get(handles.w_p,'String'));
+    w_c = str2num(get(handles.w_c,'String'));
+    A = str2num(get(handles.A,'String'));
+    B = str2num(get(handles.B,'String'));
+    v_cruise_kts = str2num(get(handles.v_cruise_kts,'String'));
+    R_nm = str2num(get(handles.R_nm,'String'));
+    loiter_time_min = str2num(get(handles.loiter_time,'String'));
+    p_res = str2num(get(handles.p_res,'String'));
+    time_combat = str2num(get(handles.time_combat,'String'));
+    C_cruise = str2num(get(handles.C_cruise,'String'));
+    C_loiter = str2num(get(handles.C_loiter,'String'));
+    C_combat = str2num(get(handles.C_combat,'String'));
+    W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat);
+    %fprintf('------------------------------------\n')
+    %fprintf('Weights Breakdown:\n')
+    %fprintf('------------------------------------\n')
+    %fprintf('Payload Weight | %0.0f [lbs]  | %0.3f\n',100)
+    %fprintf('Crew Weight    | %0.0f [lbs]  | %0.3f\n',w_c,fuel_frac)
+    %fprintf('Empty Weight   | %0.0f [lbs]  | %0.3f\n',w_e,fuel_frac)
+    %fprintf('Fuel Weight    | %0.0f [lbs]  | %0.3f\n',w_f,fuel_frac)
+    %fprintf('------------------------------------\n')
+    %fprintf('Gross Weight   | %0.0f [lbs] | %0.3f\n',w_to,fuel_frac)
+    %fprintf('------------------------------------\n')
+    %mass = handles.metricdata.density * handles.metricdata.volume;
+    set(handles.wp, 'String', round(W(1)));
+    set(handles.wc, 'String', round(W(3)));
+    set(handles.we, 'String', round(W(2)));
+    set(handles.wf, 'String', round(W(4)));
+    set(handles.gto, 'String', round(sum(W)));
+catch
+    set(handles.wp, 'String', 'No Real Solution Exists!');
+    set(handles.wc, 'String', 'No Real Solution Exists!');
+    set(handles.we, 'String', 'No Real Solution Exists!');
+    set(handles.wf, 'String', 'No Real Solution Exists!');
+    set(handles.gto, 'String', 'No Real Solution Exists!');
+end
 
 
 

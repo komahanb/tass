@@ -4,6 +4,6 @@ function [ we_wt ] = get_empty_weight_fraction(A, B , w_t )
 % Formula: we_wt = 2.34*w_t^(-0.13) % fighter aircraft
  %we_wt = 2.36*w_t^(-0.18); % 
  %we_wt = 2.34*w_t^(-0.13); % fighter aircraft Eq. 3.52 Mattingly notw
- we_wt = (invlog10((log10(w_t) -A )/B))/w_t; % Roskam EQ. 2.16
+ we_wt = ((invlog10((log10(w_t) - A )/B))/w_t); % Roskam EQ. 2.16
 end
 

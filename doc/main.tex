@@ -1,10 +1,27 @@
 \documentclass[pdftex,11pt,letter]{article}
 \input{include.tex}
 \usepackage[superscript]{cite}
+\usepackage{tikz}
+%\begin{figure}
+% \centering 
+% \includegraphics{Cover.pdf}
+%\end{figure}
+
+
+
 
 \title{\textbf{\textsc{TASS}: A Toolkit for Aircraft Sizing and Synthesis}}
 \author{Komahan Boopathy~~\url{komahan@gatech.edu}} \date{\today}
 \begin{document}
+ \begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0pt] at (current page.center) {\includegraphics[page=1]{Cover.pdf}};
+  \end{tikzpicture}
+
+\clearpage
+\tableofcontents
+\clearpage
+\listoffigures
+\listoftables
 
 \maketitle
 \vspace{-0.25in}

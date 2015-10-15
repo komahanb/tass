@@ -14,7 +14,7 @@ C_cruise = C_cruise/3600; %;1.45/3600;
 L_D_max_est = 7;
 %R  = 550*nm_to_ft;
 %v_cruise_fts = 458*kts_to_fts;
-ff_cruise1= exp(-(R*C_cruise)/(L_D_max_est*v_cruise_fts))
+ff_cruise1= exp(-(R*C_cruise)/(L_D_max_est*v_cruise_fts));
 %% 3-4  loiter
 %loiter_time    = 10*60; %[s] 10 min loiter reserve fuel
 L_D_loiter_est = 9; % Table 2.2 Raymer
@@ -29,9 +29,8 @@ C_combat = C_combat/3600; % Engine at max power
 ff_combat =exp(-(time_combat)*C_combat/(L_D_combat_est));
 %% 2, 3 ,4 ,5 are repeated
 ff_descent1=1.0;       % no fuel burnt 6-7
-%ff_cruise2=ff_cruise1; % 7-8
-C_cruise_back=1.2/3600;%normal power
-ff_cruise2= exp(-(R*C_cruise_back)/(L_D_max_est*v_cruise_fts))
+ff_cruise2=ff_cruise1; % 7-8
+ff_cruise1= exp(-(R*C_cruise_back)/(L_D_max_est*v_cruise_fts));
 ff_descent2=1.0;       % 8-9 no fuel burnt
 ff_loiter2=ff_loiter1; % 9 -10
 %% 10 - 11 Landing and shutoff
