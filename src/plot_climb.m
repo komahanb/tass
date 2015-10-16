@@ -1,18 +1,18 @@
-%function [  ] = plot_climb()
+function [  ] = plot_climb(v_cruise_kts, h, dT, dh_dt, power_setting)
 %% CLIMB
-clear;
+
 global_constants();
 
-v_cruise_kts    = 458;                      % cruise velocity [kts]
+%%v_cruise_kts    = 458;                      % cruise velocity [kts]
 v_cruise_fts    = v_cruise_kts*kts_to_fts;  % cruise velocity [ft/s]
 
 %altitude changes as it is cruise climb
-h               = 35400;                    % ft
-dh_dt           = 90;                       % ft/s
-dT              = 0;
+%%h               = 35400;                    % ft
+%%dh_dt           = 90;                       % ft/s
+%dT              = 0;
 
 beta            = 0.98;                     % assumed
-alpha           = thrust_lapse(v_cruise_fts,h,0,'mil');
+alpha           = thrust_lapse(v_cruise_fts,h,dT,power_setting);
 
 [k1, cd0]       = drag_polar(h,dT,v_cruise_fts);
 k2              = 0 ;
@@ -22,4 +22,4 @@ k2              = 0 ;
 draw_constraint(w_s,t_w);
 
 %plot(w_s,t_w,'linewidth',2);
-%end
+end

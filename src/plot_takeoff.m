@@ -1,27 +1,26 @@
-%function [  ] = plot_takeoff()
-
+function [  ] = plot_takeoff(h_to, dT,s_to,  h_obs, c_l_max_to)
 %% TAKEOFF
-clear;
+
 global_constants();
 
-h_to            = 0;                        % runway at sealevel (given)
+% h_to            = 0;                        % runway at sealevel (given)
 T_to            = 90;                       % F (given)
 T_std           = 59;                       % F (given)
 g0              = 32.17;                    % ft/s (known)
 
-[rho,a,~,~,~,~] = stdatmo(h_to,T_to-T_std,'US');
+[rho,a,~,~,~,~] = stdatmo(h_to,dT,'US');
 
-s_to            = 4400;                     % take off distance (given)
+%s_to            = 4400;                     % take off distance (given)
 k_to            = 1.2;                      % safety factor mattingly
 mu_to           = 0.05;                     % friction coefficient Mattingly (Assumed)
-h_obs           = 50;                       % height of obstacle ft (given)
+%h_obs           = 50;                       % height of obstacle ft (given)
 dh_dt           = 90;                       % rate of climb max (given)
 
 v_to            = 0.1*a*k_to;
 
 % lift-drag polar
 c_l_max_landing = 1.0;                     % Mattingly page 35  1.6 with leading edge slat
-c_l_max_to      = 0.8*c_l_max_landing;     % Mattingly page 30
+%c_l_max_to      = 0.8*c_l_max_landing;     % Mattingly page 30
 
 c_l_to          = 0.8*c_l_max_to;           % Mattingly page 35
 c_l_landing     = 0.8*c_l_max_landing;      % Mattingly page 35
@@ -65,4 +64,4 @@ draw_constraint(w_s,t_w);
 %C               = s_to;
 %w_s             = ( (-B+(B.^2+4.*A.*C).^0.5) ./ (2.*A) ).^2;
 %plot(w_s,t_w)
-%end
+end

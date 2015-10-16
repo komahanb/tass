@@ -19,10 +19,10 @@ time_fr         = 3.0;
 
 k_td            = 1.15;
 k_obs           = 1.15;
-%s_l =5000;
+
 
 % lift-drag polar
-%c_l_max_landing = 1.0;                     % Mattingly page 35  1.6 with leading edge slat
+c_l_max_landing = 1.0;                     % Mattingly page 35  1.6 with leading edge slat
 c_l_max_to      = 0.8*c_l_max_landing;     % Mattingly page 30
 
 c_l_to          = 0.8*c_l_max_to;           % Mattingly page 35
@@ -44,7 +44,7 @@ B               = time_fr * k_td*( (2*beta) / (rho*c_l_max_landing) )^0.5;
 
 
 s_a             = 2*c_l_landing/(g0*(c_d+c_dr))* (k_obs^2 - k_td^2)/(k_obs^2 + k_td^2) + c_l_max_landing * 2 *h_obs/((c_d+c_dr)*(k_obs^2 + k_td^2) );
-s_l             = s_l-s_a;         % subtract the approach distance from total distance for rolling and trans
+s_l             = 5000-s_a;         % subtract the approach distance from total distance for rolling and trans
 
 C               = s_l;
 
