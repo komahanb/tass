@@ -178,6 +178,7 @@ function mission_summary_Callback(hObject, eventdata, handles)
 % hObject    handle to mission_summary (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+mission_summary();
 
 
 % --- Executes on button press in check_climb.
