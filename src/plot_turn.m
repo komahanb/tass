@@ -17,7 +17,11 @@ v_cruise_fts    = v_cruise_kts*kts_to_fts;  % cruise velocity [ft/s] during comb
 %altitude at which turn is done (during combat)
 % h1              = 47550;                    % ft
 
-beta            = 0.75;
+%beta            = 0.75;
+
+[~,~,temp]      =  initial_fuel_fraction();
+beta = temp(6); % combat turns
+
 alpha           = thrust_lapse(v_cruise_fts,h1,0,'max');
 
 % n               = 2;                        % load factor

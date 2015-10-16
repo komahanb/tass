@@ -19,11 +19,11 @@ dh_dt           = 90;                       % rate of climb max (given)
 v_to            = 0.1*a*k_to;
 
 % lift-drag polar
-c_l_max_landing = 1.0;                     % Mattingly page 35  1.6 with leading edge slat
+%c_l_max_landing = 1.0;                     % Mattingly page 35  1.6 with leading edge slat
 %c_l_max_to      = 0.8*c_l_max_landing;     % Mattingly page 30
 
-c_l_to          = 0.8*c_l_max_to;           % Mattingly page 35
-c_l_landing     = 0.8*c_l_max_landing;      % Mattingly page 35
+%c_l_to          = 0.8*c_l_max_to;           % Mattingly page 35
+%c_l_landing     = 0.8*c_l_max_landing;      % Mattingly page 35
 
 beta            = 1.0;                      % not much fuel is burnt
 alpha           = thrust_lapse(v_to,h_to,T_to-T_std,'max');

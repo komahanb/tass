@@ -11,7 +11,9 @@ T_std           = 59;                       % F
 g0              = 32.17;                    % ft/s
 
 alpha           = 0.0;
-beta            = 0.78;
+%beta            = 0.78;
+[~,~,temp]      =  initial_fuel_fraction();
+beta = temp(11) % second climb  after cruise forward
 
 mu_b            = 0.18;
 time_fr         = 3.0;

@@ -2,17 +2,11 @@ function [fuel_frac,wni_wn, beta] = initial_fuel_fraction(v_cruise_kts, R_nm, lo
 
 switch nargin
     case 8
-
+        c = a + b;
+    case 1
+        c = a + a;
     otherwise
-        disp('Using default values for beta estimation')
-        v_cruise_kts = 458;
-        R_nm         = 550;
-        loiter_time_min  = 10;
-        p_res        = 10;
-        C_cruise     = 1.2;
-        C_loiter     = 0.6;
-        C_combat     = 2.0;
-        time_combat = 10;
+        c = 0;
 end
 
 nm_to_ft   = 6.0761e+03;
@@ -34,7 +28,7 @@ C_cruise = C_cruise/3600; %;1.45/3600;
 L_D_max_est = 7;
 %R  = 550*nm_to_ft;
 %v_cruise_fts = 458*kts_to_fts;
-ff_cruise1= exp(-(R*C_cruise)/(L_D_max_est*v_cruise_fts));
+ff_cruise1= exp(-(R*C_cruise)/(L_D_max_est*v_cruise_fts))
 %% 3-4  loiter
 wni_wn(4) = ff_cruise1;
 %loiter_time    = 10*60; %[s] 10 min loiter reserve fuel
@@ -52,22 +46,16 @@ C_combat = C_combat/3600; % Engine at max power
 ff_combat =exp(-(time_combat)*C_combat/(L_D_combat_est));
 %% 2, 3 ,4 ,5 are repeated
 wni_wn(7) = ff_combat;
-
-
 ff_descent1=1.0;       % no fuel burnt 6-7
-wni_wn(8) = ff_descent1;
-
-
 %ff_cruise2=ff_cruise1; % 7-8
 C_cruise_back=1.2/3600;%normal power
-ff_cruise2= exp(-(R*C_cruise_back)/(L_D_max_est*v_cruise_fts));
-wni_wn(9) = ff_cruise2;
-
-
+ff_cruise2= exp(-(R*C_cruise_back)/(L_D_max_est*v_cruise_fts))
 ff_descent2=1.0;       % 8-9 no fuel burnt
 ff_loiter2=ff_loiter1; % 9 -10
-wni_wn(10) = ff_descent2;
 %%
+wni_wn(8) = ff_descent1;
+wni_wn(9) = ff_cruise2;
+wni_wn(10) = ff_descent2;
 wni_wn(11) = ff_loiter2;
 %% 10 - 11 Landing and shutoff
 ff_landing = 0.995;
@@ -75,7 +63,7 @@ wni_wn(12) = ff_landing;
 %% Put together the legs
 fuel_frac= ff_to*ff_climb1*ff_cruise1*ff_loiter1*ff_climb2*ff_combat*ff_descent1...
     *ff_cruise2*ff_descent2*ff_loiter2*ff_landing;
-beta = [1:1:12];
+beta=[1:1:12];
 for i = 1:length(wni_wn)
     beta(i) = prod(wni_wn(1:i));
 end

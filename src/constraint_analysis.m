@@ -110,12 +110,12 @@ r_cruise_nm    = str2double(get(handles.cc_r,'String'));
 %dh_dt         = str2double(get(handles.w_p,'String'));
 plot_cruise_climb(v_cruise_kts, h1, h2, r_cruise_nm);
 %%
-v_cruise_kts   = str2double(get(handles.roc_vel1,'String'))
-h              = str2double(get(handles.roc_h1,'String'))
-dT             = str2double(get(handles.roc_dt1,'String'))
-dh_dt          = str2double(get(handles.roc_roc1,'String'))
-power_setting  = lower(get(get(handles.roc_power_setting,'SelectedObject'), 'String'))
-plot_climb(v_cruise_kts, h, dT, dh_dt, power_setting)
+v_cruise_kts   = str2double(get(handles.roc_vel1,'String'));
+h              = str2double(get(handles.roc_h1,'String'));
+dT             = str2double(get(handles.roc_dt1,'String'));
+dh_dt          = str2double(get(handles.roc_roc1,'String'));
+power_setting  = lower(get(get(handles.roc_power_setting,'SelectedObject'), 'String'));
+plot_climb(v_cruise_kts, h, dT, dh_dt, power_setting);
 %%
 v_cruise_kts   = str2double(get(handles.turn_velocity,'String'));
 h1             = str2double(get(handles.turn_height,'String'));

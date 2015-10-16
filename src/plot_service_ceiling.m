@@ -11,7 +11,11 @@ v_fts           = v_kts*kts_to_fts;                 % cruise velocity [ft/s]
 k2              = 0;
 [k1, cd0]       = drag_polar(h,dT,v_fts);
 
-beta            = 0.7;                     % assumed
+%beta            = 0.7;                     % assumed
+
+[~,~,temp]      =  initial_fuel_fraction();
+beta = temp(6); % first climb before cruise
+
 alpha           = thrust_lapse(v_fts,h,dT,power_setting);
 
 dh_dt           = 100/60; %ft/s
