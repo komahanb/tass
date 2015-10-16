@@ -95,7 +95,10 @@ try
     C_loiter = str2num(get(handles.C_loiter,'String'));
     C_combat = str2num(get(handles.C_combat,'String'));  
     method = lower(get(get(handles.method,'SelectedObject'), 'String')); %raymer/roskam empty weight
+    
     W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat, method);
+    [~,W_HIST,BETA] = initial_fuel_fraction(v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat, time_combat)
+    save weights.mat W_HIST BETA W w_p w_c A B v_cruise_kts R_nm loiter_time_min p_res  C_cruise C_loiter C_combat time_combat;
     %fprintf('------------------------------------\n')
     %fprintf('Weights Breakdown:\n')
     %fprintf('------------------------------------\n')

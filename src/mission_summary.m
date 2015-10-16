@@ -79,6 +79,95 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 plot_drag_polar();
+disp('loading')
+load_data
+disp('unloading')
+
+BETA;
+set(handles.beta1, 'String',  BETA(1) );
+set(handles.beta2, 'String',  BETA(2) );
+set(handles.beta3, 'String',  BETA(3) );
+set(handles.beta4, 'String',  BETA(4) );
+set(handles.beta5, 'String',  BETA(5) );
+set(handles.beta6, 'String',  BETA(6) );
+set(handles.beta7, 'String',  BETA(7) );
+set(handles.beta8, 'String',  BETA(8) );
+set(handles.beta9, 'String',  BETA(9) );
+set(handles.beta10, 'String',  BETA(10) );
+set(handles.beta11, 'String',  BETA(11) );
+set(handles.beta12, 'String',  BETA(12) );
+
+W_HIST
+set(handles.f1, 'String',  W_HIST(1) );
+set(handles.f2, 'String',  W_HIST(2) );
+set(handles.f3, 'String',  W_HIST(3) );
+set(handles.f4, 'String',  W_HIST(4) );
+set(handles.f5, 'String',  W_HIST(5) );
+set(handles.f6, 'String',  W_HIST(6) );
+set(handles.f7, 'String',  W_HIST(7) );
+set(handles.f8, 'String',  W_HIST(8) );
+set(handles.f9, 'String',  W_HIST(9) );
+set(handles.f10, 'String',  W_HIST(10) );
+set(handles.f11, 'String',  W_HIST(11) );
+set(handles.f12, 'String',  W_HIST(12) );
+
+
+W_F =W(4);
+set(handles.wf1, 'String',  W_F*(1-W_HIST(1)) );
+set(handles.wf2, 'String',  W_F*(1-W_HIST(2)) );
+set(handles.wf3, 'String',  W_F*(1-W_HIST(3)) );
+set(handles.wf4, 'String',  W_F*(1-W_HIST(4)) );
+set(handles.wf5, 'String',  W_F*(1-W_HIST(5)) );
+set(handles.wf6, 'String',  W_F*(1-W_HIST(6)) );
+set(handles.wf7, 'String',  W_F*(1-W_HIST(7)) );
+set(handles.wf8, 'String',  W_F*(1-W_HIST(8)) );
+set(handles.wf9, 'String',  W_F*(1-W_HIST(9)) );
+set(handles.wf10, 'String',  W_F*(1-W_HIST(10)) );
+set(handles.wf11, 'String',  W_F*(1-W_HIST(11)) );
+set(handles.wf12, 'String',  W_F*(1-W_HIST(12)) );
+
+W_TO = sum(W) 
+set(handles.wto1, 'String',  W_TO*BETA(1) );
+set(handles.wto2, 'String',  W_TO*BETA(2) );
+set(handles.wto3, 'String',  W_TO*BETA(3) );
+set(handles.wto4, 'String',  W_TO*BETA(4) );
+set(handles.wto5, 'String',  W_TO*BETA(5) );
+set(handles.wto6, 'String',  W_TO*BETA(6) );
+set(handles.wto7, 'String',  W_TO*BETA(7) );
+set(handles.wto8, 'String',  W_TO*BETA(8) );
+set(handles.wto9, 'String',  W_TO*BETA(9) );
+set(handles.wto10, 'String',  W_TO*BETA(10) );
+set(handles.wto11, 'String',  W_TO*BETA(11) );
+set(handles.wto12, 'String',  W_TO*BETA(12) );
+
+S=W_TO/str2num(get(handles.w_s,'String'))
+
+set(handles.wing_area, 'String', S);
+
+set(handles.ws1, 'String',  W_TO*BETA(1)/S );
+set(handles.ws2, 'String',  W_TO*BETA(2)/S );
+set(handles.ws3, 'String',  W_TO*BETA(3)/S );
+set(handles.ws4, 'String',  W_TO*BETA(4)/S );
+set(handles.ws5, 'String',  W_TO*BETA(5)/S );
+set(handles.ws6, 'String',  W_TO*BETA(6)/S );
+set(handles.ws7, 'String',  W_TO*BETA(7)/S );
+set(handles.ws8, 'String',  W_TO*BETA(8)/S );
+set(handles.ws9, 'String',  W_TO*BETA(9)/S );
+set(handles.ws10, 'String',  W_TO*BETA(10)/S);
+set(handles.ws11, 'String',  W_TO*BETA(11)/S);
+set(handles.ws12, 'String',  W_TO*BETA(12)/S);
+
+
+
+
+
+
+
+%set(handles.wf, 'String', round(W(4)));
+%set(handles.gto, 'String', round(sum(W)));
+%WTO  = sum(W);
+
+
 
 
 
