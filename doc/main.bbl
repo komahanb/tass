@@ -1,5 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{valid2}
+North american f-86 sabre.
+\newblock $http://www.fighter-planes.com/info/f86sabre.htm$.
+
+\bibitem{valid1}
+The north american f-86 sabre jet.
+\newblock $http://www.456fis.org/F-86_SABER.htm$.
+
 \bibitem{FieldingText}
 J.~P. Fielding.
 \newblock {\em Introduction to Aircraft Design}.
@@ -48,6 +56,16 @@ D.~P. Raymer.
 \newblock {Modern Use of Spreadsheet Methods for Aircraft Design, Sizing, and
   Performance Analysis}.
 \newblock AIAA Paper, 2004-0534, 2004.
+
+\bibitem{RoskamText}
+J.~Roskam.
+\newblock {\em Airplane Design: Part I, Preliminary Sizing of Airplanes}.
+\newblock Roskam Aviation and Engineering Corporation, Ottawa, TX, 1985.
+
+\bibitem{sky}
+S.~Sartorius.
+\newblock {STDATMO}: Standard atmosphere function.
+\newblock {MATLAB} Central, 2010.
 
 \bibitem{US}
 1976 U.S.~standard atmosphere.

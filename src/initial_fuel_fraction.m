@@ -4,7 +4,7 @@ switch nargin
     case 8
 
     otherwise
-        disp('Using default values for beta estimation')
+        %disp('Using default values for beta estimation')
         v_cruise_kts = 458;
         R_nm         = 550;
         loiter_time_min  = 10;
@@ -65,10 +65,11 @@ wni_wn(9) = ff_cruise2;
 
 
 ff_descent2=1.0;       % 8-9 no fuel burnt
+
 ff_loiter2=ff_loiter1; % 9 -10
-wni_wn(10) = ff_descent2;
+wni_wn(10) = ff_loiter1;
 %%
-wni_wn(11) = ff_loiter2;
+wni_wn(11) = ff_descent2;
 %% 10 - 11 Landing and shutoff
 ff_landing = 0.995;
 wni_wn(12) = ff_landing;

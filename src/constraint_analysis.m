@@ -142,9 +142,9 @@ dT             = str2double(get(handles.max_dt,'String'));
 power_setting  = lower(get(get(handles.max_power_button,'SelectedObject'), 'String'));
 plot_max_speed(v_max,h,dT,power_setting);
 %%
-v_kts          = str2double(get(handles.sc_v,'String'))
-h              = str2double(get(handles.sc_h,'String'))
-power_setting  = lower(get(get(handles.sc_power_button,'SelectedObject'), 'String'))
+v_kts          = str2double(get(handles.sc_v,'String'));
+h              = str2double(get(handles.sc_h,'String'));
+power_setting  = lower(get(get(handles.sc_power_button,'SelectedObject'), 'String'));
 plot_service_ceiling(v_kts,h,power_setting);
 %%
 %plot_rate_of_climb(); void
@@ -161,10 +161,8 @@ function reset_Callback(hObject, eventdata, handles)
 % hObject    handle to reset (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-disp('resetting')
 %axes_and_label();
 clc;cla;
-disp('reset complete');
 
 
 % --- Executes on button press in estimate_weights.

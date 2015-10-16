@@ -22,7 +22,7 @@ function varargout = mission_summary(varargin)
 
 % Edit the above text to modify the response to help mission_summary
 
-% Last Modified by GUIDE v2.5 16-Oct-2015 01:52:52
+% Last Modified by GUIDE v2.5 16-Oct-2015 06:18:48
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -79,9 +79,9 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 plot_drag_polar();
-disp('loading')
+
+try 
 load_data
-disp('unloading')
 
 BETA;
 set(handles.beta1, 'String',  BETA(1) );
@@ -97,7 +97,7 @@ set(handles.beta10, 'String',  BETA(10) );
 set(handles.beta11, 'String',  BETA(11) );
 set(handles.beta12, 'String',  BETA(12) );
 
-W_HIST
+W_HIST;
 set(handles.f1, 'String',  W_HIST(1) );
 set(handles.f2, 'String',  W_HIST(2) );
 set(handles.f3, 'String',  W_HIST(3) );
@@ -126,7 +126,7 @@ set(handles.wf10, 'String',  W_F*(1-W_HIST(10)) );
 set(handles.wf11, 'String',  W_F*(1-W_HIST(11)) );
 set(handles.wf12, 'String',  W_F*(1-W_HIST(12)) );
 
-W_TO = sum(W) 
+W_TO = sum(W) ;
 set(handles.wto1, 'String',  W_TO*BETA(1) );
 set(handles.wto2, 'String',  W_TO*BETA(2) );
 set(handles.wto3, 'String',  W_TO*BETA(3) );
@@ -140,7 +140,7 @@ set(handles.wto10, 'String',  W_TO*BETA(10) );
 set(handles.wto11, 'String',  W_TO*BETA(11) );
 set(handles.wto12, 'String',  W_TO*BETA(12) );
 
-S=W_TO/str2num(get(handles.w_s,'String'))
+S=W_TO/str2num(get(handles.w_s,'String'));
 
 set(handles.wing_area, 'String', S);
 
@@ -156,6 +156,34 @@ set(handles.ws9, 'String',  W_TO*BETA(9)/S );
 set(handles.ws10, 'String',  W_TO*BETA(10)/S);
 set(handles.ws11, 'String',  W_TO*BETA(11)/S);
 set(handles.ws12, 'String',  W_TO*BETA(12)/S);
+
+
+tw=str2num(get(handles.thrust_weight,'String'));
+
+set(handles.tw1, 'String',  tw/BETA(1)  );
+set(handles.tw2, 'String',  tw/BETA(2)  );
+set(handles.tw3, 'String',  tw/BETA(3)  );
+set(handles.tw4, 'String',  tw/BETA(4)  );
+set(handles.tw5, 'String',  tw/BETA(5)  );
+set(handles.tw6, 'String',  tw/BETA(6)  );
+set(handles.tw7, 'String',  tw/BETA(7)  );
+set(handles.tw8, 'String',  tw/BETA(8)  );
+set(handles.tw9, 'String',  tw/BETA(9)  );
+set(handles.tw10, 'String',  tw/BETA(10) );
+set(handles.tw11, 'String',  tw/BETA(11) );
+set(handles.tw12, 'String',  tw/BETA(12) );
+
+catch
+    set(handles.wing_area, 'String', 'Run Weight Analysis!');
+
+end
+
+
+
+
+
+
+
 
 
 
@@ -194,18 +222,18 @@ end
 
 
 
-function t_w_Callback(hObject, eventdata, handles)
-% hObject    handle to t_w (see GCBO)
+function thrust_weight_Callback(hObject, eventdata, handles)
+% hObject    handle to thrust_weight (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of t_w as text
-%        str2double(get(hObject,'String')) returns contents of t_w as a double
+% Hints: get(hObject,'String') returns contents of thrust_weight as text
+%        str2double(get(hObject,'String')) returns contents of thrust_weight as a double
 
 
 % --- Executes during object creation, after setting all properties.
-function t_w_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to t_w (see GCBO)
+function thrust_weight_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to thrust_weight (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 

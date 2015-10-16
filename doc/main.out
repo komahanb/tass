@@ -1,30 +1,20 @@
 \BOOKMARK [1][-]{section.1}{Introduction and Motivation}{}% 1
-\BOOKMARK [1][-]{section.2}{Getting Started}{}% 2
+\BOOKMARK [1][-]{section.2}{Installation and Layout}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Installation}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Input Layout}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Output Layout}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Benchmarking TASS}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Aircraft Requirements}{section.3}% 7
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Functional Requirements}{subsection.3.1}% 8
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Mission Profile}{subsection.3.1}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Performance Requirements}{section.3}% 10
-\BOOKMARK [1][-]{section.4}{Architecture of the Toolkit}{}% 11
-\BOOKMARK [2][-]{subsection.4.1}{Standard Atmosphere Model}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.2}{Mattingly Energy Equation}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.3}{Constraint Analysis}{section.4}% 14
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Constant Altitude/Speed Cruise}{subsection.4.3}% 15
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Constant Speed Climb}{subsection.4.3}% 16
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Constant Altitude/Speed Turn}{subsection.4.3}% 17
-\BOOKMARK [3][-]{subsubsection.4.3.4}{Horizontal Acceleration}{subsection.4.3}% 18
-\BOOKMARK [3][-]{subsubsection.4.3.5}{Takeoff Ground Roll \(lots of Thrust\)}{subsection.4.3}% 19
-\BOOKMARK [3][-]{subsubsection.4.3.6}{Takeoff Ground Roll \(not so much Thrust\)}{subsection.4.3}% 20
-\BOOKMARK [3][-]{subsubsection.4.3.7}{Braking Roll}{subsection.4.3}% 21
-\BOOKMARK [3][-]{subsubsection.4.3.8}{Service Ceiling}{subsection.4.3}% 22
-\BOOKMARK [2][-]{subsection.4.4}{Weight Estimation}{section.4}% 23
-\BOOKMARK [1][-]{section.5}{Conceptual Design of the Benchmark Fighter}{}% 24
-\BOOKMARK [2][-]{subsection.5.1}{Perturbations of Constraints}{section.5}% 25
-\BOOKMARK [1][-]{section.6}{Summary}{}% 26
-\BOOKMARK [1][-]{appendix.A}{RFP for Benchmarking Test Case}{}% 27
-\BOOKMARK [1][-]{appendix.B}{Flexibility of the Tool}{}% 28
-\BOOKMARK [2][-]{subsection.B.1}{Versatility of the Tool}{appendix.B}% 29
-\BOOKMARK [2][-]{subsection.B.2}{Challenges and Cons}{appendix.B}% 30
+\BOOKMARK [2][-]{subsection.2.2}{Constraint Analysis Layout}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Mission Summary Layout}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Weight Analysis Layout}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Fighter Aircraft Example}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Aircraft Requirements}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Functional Requirements}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Mission Profile}{subsection.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Performance Requirements}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Architecture of the Toolkit}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Constraint Analysis}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Weight Estimation}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Mission Summary}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Benchmarking the design}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
+\BOOKMARK [1][-]{appendix.A}{Flexibility of the Tool}{}% 18
+\BOOKMARK [2][-]{subsection.A.1}{Versatility of the Tool}{appendix.A}% 19
+\BOOKMARK [2][-]{subsection.A.2}{Challenges and Cons}{appendix.A}% 20

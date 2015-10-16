@@ -82,6 +82,12 @@ function compute_weight_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 try
+    try
+        delete weights.mat
+    catch
+        
+    end
+
     w_p = str2num(get(handles.w_p,'String'));
     w_c = str2num(get(handles.w_c,'String'));
     A = str2num(get(handles.A,'String'));
@@ -97,7 +103,7 @@ try
     method = lower(get(get(handles.method,'SelectedObject'), 'String')); %raymer/roskam empty weight
     
     W = weight_main(w_p, w_c, A, B, v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat,time_combat, method);
-    [~,W_HIST,BETA] = initial_fuel_fraction(v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat, time_combat)
+    [~,W_HIST,BETA] = initial_fuel_fraction(v_cruise_kts, R_nm, loiter_time_min,p_res, C_cruise, C_loiter, C_combat, time_combat);
     save weights.mat W_HIST BETA W w_p w_c A B v_cruise_kts R_nm loiter_time_min p_res  C_cruise C_loiter C_combat time_combat;
     %fprintf('------------------------------------\n')
     %fprintf('Weights Breakdown:\n')
@@ -416,7 +422,7 @@ set(handles.R_nm ,'String', '550');
 set(handles.loiter_time ,'String', '10');
 set(handles.p_res ,'String', '10');
 set(handles.time_combat ,'String', '10');
-set(handles.C_cruise ,'String','1.4');
+set(handles.C_cruise ,'String','0.99');
 set(handles.C_loiter ,'String', '0.6');
 set(handles.C_combat ,'String','2.0');
 pie(1);

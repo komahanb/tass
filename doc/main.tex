@@ -28,7 +28,7 @@
 \rule{\linewidth}{2pt}
 
 \begin{abstract}
-A  \ul{T}oolkit for \ul{A}ircraft \ul{S}izing and \ul{S}ynthesis (TASS), capable of performing sizing and synthesis calculations  in the context of conceptual design of aircraft is developed in Matlab\cite{MATLAB}. TASS implements energy-based constraint and weight-fraction approach for the mission sizing analyses, and provides the user with a design point that is a function of \emph{thrust-weight ratio} and \emph{wing-loading}.  The performance of TASS is benchmarked against the known metrics of a transonic jet fighter aircraft F-86L Sabre (Sabrejet).
+A  \ul{T}oolkit for \ul{A}ircraft \ul{S}izing and \ul{S}ynthesis (TASS), capable of performing sizing and synthesis calculations  in the context of conceptual design of aircraft is developed in Matlab\cite{MATLAB}. The TASS implements energy-based constraint and weight-fraction approach for the mission sizing analyses, and provides the user with a design point that is a function of \emph{thrust-weight ratio} and \emph{wing-loading}.  The performance of the TASS is benchmarked against the known metrics of a transonic jet fighter aircraft F-86L Sabre (Sabrejet).
 \end{abstract}
 
 \section{Introduction and Motivation}
@@ -37,25 +37,32 @@ Design of aircraft is subject to tens of thousands of constraints that span acro
 \\\\
 Similar motivations have led to development of tools that ably perform conceptual analysis in various platforms\cite{Raymer2004, Kroo2005}. To this end, this work too aims to develop a toolkit in Matlab\cite{MATLAB} known as TASS, that performs an analysis of the early phases of aircraft design \ie~the sizing and synthesis. The scope of current work is limited to the conceptual design phase of aircraft design; more advanced phases in aircraft design (e.g. preliminary, detailed design \etc) fall beyond the scope of current work. Nevertheless, modularity is a key consideration in the development of the toolkit, which enables further advancements a function of time.
 \\\\
-Energy based constraint analyses encompass an attractive way to start with aircraft design. The main advantage of energy-based approach over conventional approaches is that it employs Lagrangian paradigm of mechanics, as opposed to Newton's world of vector mechanics. The key idea is that aircraft is treated as a system that converts energy from one form to another as the mission progresses. For example, combustion in the engines convert the chemical energy of the fuel into thermal energy, which in-turn accelerates the gases to rotate the turbines to provide mechanical energy to sustain motion. It is easier to think in terms of scalars such as potential energy (depends on position) and  kinetic energy (depends on rate of change of position), compared to resolving forces (e.g. lift, thrust)  along different directions (e.g. vertical, horizontal) and invoking force and moment balances. Due to such advantages, \textsc{TASS} preferably employs energy based constraint analyses. The mathematical and physical models used in various stages of the mission are explained as and when they are introduced in later sections and are not explained here for brevity.
+Energy based constraint analyses encompass an attractive way to start with aircraft design. The main advantage of energy-based approach over conventional approaches is that it employs Lagrangian paradigm of mechanics, as opposed to Newton's world of vector mechanics. The key idea is that aircraft is treated as a system that converts energy from one form to another as the mission progresses. For example, combustion in the engines convert the chemical energy of the fuel into thermal energy, which in-turn accelerates the gases to rotate the turbines to provide mechanical energy to sustain motion. It is easier to think in terms of scalars such as potential energy (depends on position) and  kinetic energy (depends on rate of change of position), compared to resolving forces (e.g. lift, thrust)  along different directions (e.g. vertical, horizontal) and invoking force and moment balances. Due to such advantages, the \textsc{TASS} preferably employs energy based constraint analyses. The mathematical and physical models used in various stages of the mission are explained as and when they are introduced in later sections and are not explained here for brevity.
 \\\\
 This report is organized as follows. Section~\ref{theory} outlines the mathematical models behind the aircraft sizing and synthesis procedure. Section~\ref{requirements} outlines the functionality that is expected from the toolkit. Section~\ref{installandbenchmnark} contains detailed step-by-step instructions on the working of the tool with the help of an example. Section~\ref{conclusion} concludes the report highlighting the key aspects of the tool and lays-out scope for further improvements to the toolkit. 
 
 
-\section{Getting Started}\label{layout}
-This section is devoted to provide a high-level overview of the of the software.
+\section{Installation and Layout}\label{layout}
+This section is devoted to provide a high-level overview of the of the software. A Graphical User Interface (GUI) is designed to collect all the mission-specific inputs that the user supplies to the software. From an user-standpoint these input parameters are decided based on the complete break-down of mission requirements (e.g. humanitarian, rescue, military missions). 
 
 \subsection{Installation}
-TASS uses native Matlab code for all of its functionality -- including initialization, iterative calculations and graphics, therefore a working version of Matlab\cite{MATLAB} is sufficient. The software is tested to work on both UNIX and Windows based workstations. The source code can be obtained by using \texttt{git clone https://github.com/komahanb/tass.git} from a \textit{terminal} or \textit{shell} program or by downloading \texttt{tass-master.zip} file and extracting it in a working folder of convenience. 
+The TASS uses native Matlab code for all of its functionality -- including initialization, iterative calculations and graphics, therefore a working version of Matlab\cite{MATLAB} is sufficient. The software is tested to work on both UNIX and Windows based workstations. The source code can be obtained by using \texttt{git clone https://github.com/komahanb/tass.git} from a \textit{terminal} or \textit{shell} program or by downloading \texttt{tass.zip} file and extracting it in a working folder of convenience. 
 
-\subsection{Input Layout}
-A Graphical User Interface (GUI) is designed to collect all the mission-specific inputs that the user supplies to the software. From an user-standpoint these input parameters are decided based on the complete break-down of mission requirements (e.g. humanitarian, rescue, military missions). Table~\ref{inputs} presents the typical inputs that the user is expected to provide to the software. 
+%Table~\ref{inputs} presents the typical inputs that the user is expected to provide to the software. 
 
-\subsection{Output Layout}
-Output layout contains a collection of information interms of values and plots that the user can get from the software.  TASS provides  a constraint analysis plot and enables the user to directly identify a design point in terms of thrust to weight ratio and wing loading. It also provides a mission analysis for the sizing of the system indicating the converged estimated weight and weight contributions from the different weight groups. The following is a comprehensive list of values, tables and plots that TASS is able to present to the user.
+\subsection{Constraint Analysis Layout}
 
-\section{Benchmarking TASS}
-A brief introduction of the concept under study and a summary of the mission and requirements are  outlined next\cite{MavrisNotes}. The design produced by TASS will be compared to the design of the actual aircraft.
+The  TASS provides  a constraint analysis plot and enables the user to directly identify a design point in terms of thrust to weight ratio and wing loading.
+
+\subsection{Mission Summary Layout}
+
+\subsection{Weight Analysis Layout}
+
+This layout provides a mission analysis for the sizing of the system indicating the converged estimated gross takeoff weight and weight contributions from the different weight groups such as payload, fuel and crew.
+
+
+\section{Fighter Aircraft Example}
+A brief introduction of the concept under study and a summary of the mission and requirements are  outlined next\cite{MavrisNotes}. The design produced by the TASS will be compared to the design of the actual aircraft.
 
 \subsection{Aircraft Requirements}\label{requirements}
  The conceptual design process begins with a defined set of requirements. These requirements lay-out specific constraints and design goals that the end-system must be capable of achieving.  These goals and constraints are often presented the form of Request for Proposal (RFP). %RFP for the fighter is given in Appendix~\ref{}. 
@@ -80,10 +87,7 @@ Table~\ref{tab:requirements} breaks-down the performance requirements of the air
 0-1 	& Takeoff 	& Distance $4400~ft$ \\
 	&		& Clear obstacle at $50~ft$\\
 	& 		& Maximum power with afterburners\\
-	& 		& Air speed $1200~ft/s$ \\
-	&		& Sea level runway at $90~F$\\
-	&		& Maximum rate of climb $90~ft/s$\\
-\hline
+	&		& Sea level runway at $90~F$\\\hline
 1-2	& Climb		& Altitude 35400~ft \\
 	& 		& Full military power without afterburners\\
 	&		& Maximum rate of climb $90~ft/s$\\
@@ -103,15 +107,19 @@ Table~\ref{tab:requirements} breaks-down the performance requirements of the air
 	&		& Duration 5 minutes \\
 	& 		& Speed 536 knots \\
 \hline
-6-7	& Cruise 	& Altitude 37000 ft\\
+6-7	& Descend 	& Descend to 37000 ft\\
+\hline
+7-8	& Cruise 	& Altitude 37000 ft\\
 	& 		& Distance 550 nautical miles\\
 	&		& Normal power\\
 \hline
-7-8	& Loiter	& 10 minutes  \\	
+8-9	& Loiter	& 10 minutes  \\	
 	& 		& Altitude 35000 ft\\
 	&		& Maximum endurance conditions \\
 \hline
-8-9	& Landing	& Distance 5000 ft \\
+9-10	& Descend 	& Descend and line up for landing\\
+\hline
+10-11	& Landing	& Distance 5000 ft \\
 	&		& Without highilift devices\\	
 	&		& 10$\%$ fuel reserve\\
 \hline\hline
@@ -129,12 +137,12 @@ The elemets in mission profile are decomposed into performance requirements that
 \hline\hline
 Item  & Performance Requirements \\
 \hline\hline
-Takeoff distance 	& $4400~ft$ \\
-Landing distance        & $5000~ft$ \\
-Maximum air speed       & $1200~ft/s$ \\
+Takeoff distance 	& $4400~ft$ at sea-level and $90F$ temperature\\
+Landing distance        & $5000~ft$  at sea-level and $90F$ temperature \\
+Maximum air speed       & $1200~ft/s$ at sea-level \\
 Maximum rate of climb   & $90~ft/s$\\
-Altitude                & 47550 ft\\
-Turn                    & 5g sustained turn~\footnote{Assumed due to the nature of the mission}\\
+Manueverability at Peak Altitude                & 47550 ft\\
+Turn                    & 2g sustained turn~\footnote{Assumed due to the nature of the mission}\\
 \hline\hline
 \end{tabular}
 \label{tab:performance_reqs}
@@ -151,17 +159,9 @@ This section provides an outline of the theory, physical and mathematical models
 	\label{fig:sizing_overview}
 \end{figure}
 
-\subsection{Standard Atmosphere Model}
-TASS has offers the flexibility to choose between two popular standard atmosphere models to the users:
-\begin{enumerate}[(a)]
-\item U.S. Standard Atmosphere model\cite{US}
-\item  Committee on Extension to the Standard Atmosphere (COESA) model\cite{US}
-\end{enumerate}
-These models are used to obtain the temperature, speed of sound (Mach number), pressure and density as a function of height in the calculations. The default model used in the tool is the U.S. Standard Atmosphere model.
+\paragraph{Standard Atmosphere Model:}~The toolkit automatically computes the standard atmosphere conditions based on the U.S. Standard Atmosphere model\cite{US,sky}.  The standard atmosphere model provides the temperature, speed of sound (Mach number), pressure and density as a function of height in the calculations.
 
-\subsection{Mattingly Energy Equation}
-
-The performance constraints and requirements are set as functions of \emph{thrust loading} (thrust-to-weight ratio) and \emph{wing loading}, the two sizing parameters that contain key information about the top level characteristics of the system\cite{MattinglyText}. The Mattingly Master Enerygy equation is:
+\paragraph{Mattingly Energy Equation:} The performance constraints and requirements are set as functions of \emph{thrust loading} (thrust-to-weight ratio) and \emph{wing loading}, the two sizing parameters that contain key information about the top level characteristics of the system\cite{MattinglyText}. The Mattingly Master Enerygy equation is:
 \beq\label{eq:energy}
 \dfrac{T_{SL}}{W_{TO}} = \dfrac{\beta}{\alpha} 
 \left\{ \dfrac{qS}{\beta W_{TO}}
@@ -189,22 +189,22 @@ Table~\ref{tab:param_energy} contains a short definition of the parameters in Eq
 \centering 
 \begin{tabular}{c c c c}
 \hline\hline
- {Parameter} & Description & English Unit & SI Unit\\
+ {Parameter} & Description & English Unit \\
 \hline\hline
-$T_{SL}$ & sea-level thrust           & lb       & N     \\
-$W_{TO}$ & take-off gross weight      & lb       & N     \\  
-$q$     & dynamic pressure           & $lb/ft^2$& $N/m^2$\\ 
-$S$     & wing planform area         & $ft^2$   & $m^2$  \\   
-$C_{D_0}$& drag at zero lift          &  no unit & no unit\\
-$K_1$   &                            &          &        \\
-$K_2$   &                            &          &        \\
-$q$     & load factor                & no unit &  no unit\\ 
-$R$     &                            &          &        \\
-$V$     &  velocity(speed)           &  $ft/s$  & $m/s$  \\
-$h$     &  altitude from sea level   & $ft$     & $m$    \\
-$g_0$   &  gravity at sea level      & $ft/s^2$ & $m/s^2$\\
-$\alpha$&                            &          &        \\
-$\beta$ & instantaneous weight fraction           &          &        \\
+$T_{SL}$  & sea-level thrust           & lb  \\
+$W_{TO}$  & take-off gross weight      & lb   \\
+$q$      & dynamic pressure           & $lb/ft^2$ \\
+$S$      & wing planform area         & $ft^2$   \\
+$C_{D_0}$ & drag at zero lift          &  no unit \\
+$K_1$    &  Parasitic Drag constant   &   no unit       \\ 
+$K_2$    & Interference drag          &   no unit      \\
+$q$      & load factor                & no unit \\ 
+$R$      &  Resistance Drag           &  $lb$     \\ 
+$V$      &  velocity(speed)           &  $ft/s$  \\
+$h$     &  altitude from sea level   & $ft$    \\
+$g_0$   &  gravity at sea level      & $ft/s^2$ \\
+$\alpha$&  thrust lapse correction   &  no unit  \\
+$\beta$ & fuel burn correction       &    no unit\\
 \hline
 \end{tabular}
 \label{tab:param_energy}
@@ -213,57 +213,80 @@ $\beta$ & instantaneous weight fraction           &          &        \\
 \subsection{Constraint Analysis}
 By manipulating Eq.~\ref{eq:energy} various constraints pertaining to the mission can be derived. Detailed derivation and treatment of such constraints can be found in Mattingly~\etal\cite{MattinglyText}.
 
-\subsubsection{Constant Altitude/Speed Cruise}
-
-\subsubsection{Constant Speed Climb}
-
-\subsubsection{Constant Altitude/Speed Turn}
-
-\subsubsection{Horizontal Acceleration}
-
-\subsubsection{Takeoff Ground Roll (lots of Thrust)}
-
-\subsubsection{Takeoff Ground Roll (not so much Thrust)}
-
-\subsubsection{Braking Roll}
-
-\subsubsection{Service Ceiling}
-
 \subsection{Weight Estimation}
 
 The  takeoff gross weight $W_{TO}$ can be estimated using
 \beq\label{eq:takeoff_weight}
 W_{TO} = W_C + W_P +W_E +W_F
 \eeq
-where $W_C$ is the crew weight, $W_P$ is the payload weight, $W_E$ is the empty weight and $W_F$ is the fuel weight. The design is to be done to carry a crew member who weighs $210~lbs$ and  a payload of $432~lbs$. It is rather difficult to estimate the empty and fuel weight compared to the other counterparts.
+where $W_C$ is the crew weight, $W_P$ is the payload weight, $W_E$ is the empty weight and $W_F$ is the fuel weight.
+\paragraph{Payload and Crew Weights:}~ The design is done to carry a crew member who weighs $210~lbs$ and  a payload of $432~lbs$. Though this is an expendable payload as per the requirement which is dropped-off at some point in the mission, it is assumed that in the event of aborting the mission, the airplane has to carry the payload back to the base, and thus it is treated as a non-expendable payload. User input panels that facilitate the inputs of these weights is shown  in Figure~\ref{payload_crew_weight_panel}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{figures/payload_crew_weight_panel.pdf}
+	\caption{Panel designed for inputting the payload and crew weights.}
+	\label{payload_crew_weight_panel}
+\end{figure}
+
+\paragraph{Empty Weight Estimation:}~It is rather difficult to estimate the empty and fuel weight compared to the other counterparts. The empty weight is found using empirical correlations of  historical data. In the toolkit both, Mattingly\cite{MattinglyText} (Eq. 3.52) and Roskam\cite{RoskamText} text based models are implemented and the user has the flexibility to choose between the two. The user only needs to input the regression constants $A$ and $B$ in the \texttt{weight analysis layout}, under \textit{empty weight panel}. The panel uses the following default values: $A=0.5091$ and $B=0.9505$, which pertains to the current design under study and is adopted from Roskam\cite{RoskamText} (Eq. 2.16). The input panel is shown in Figure~\ref{panel_empty_weight}:
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{figures/empty_weight_panel.pdf}
+	\caption{Input panel facilitating the selection of different models for empirical estimation of empty weights.}
+	\label{panel_empty_weight}
+\end{figure}
+
+\paragraph{Fuel Weight Estimation:}~Fuel consumed throughout the mission is modeled by breaking down the mission into various segments as shown in Table~\ref{tab:requirements}. The fuel consumed during each segment is modeled based on the values provided in Raymer~\cite{RaymerText}. For the cruise segments alone, the fuel burn ordinary differential equation is integrated using the values and procedure given in Section (3.4.1) of Mattingly~\cite{MattinglyText}. The the purpose of reusability for similar missions, important inputs have been externalized in the panel, as shown in Figure~\ref{panel_fuel_weight}.
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.85]{figures/fuel_weight_panel.pdf}
+	\caption{Input panel for fuel weight calculations.}
+	\label{panel_fuel_weight}
+\end{figure}
+The default values are the ones that are pertaining to the current mission and are assembled from RPF and sources cited above. The user can use the panel for analyzing similar configurations that follow the same mission with different values.
+
+\paragraph{Weights Breakdown:}
+At the end of the mission analysis segment-by-segment, the toolkit provides the weights breakdown in the form of a pie-chart and table (see Figure~\ref{weight_result}).
+\begin{figure}[h]
+\centering
+\begin{minipage}[b]{0.48\linewidth}
+\includegraphics[width=1.0\textwidth]{figures/pie_weight.pdf} 
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+   \includegraphics[width=1.0\textwidth]{figures/summary_weight.pdf} %LHS.pdf
+\end{minipage}
+\caption{A pie-chart showing the weight fractions (left) and the table summarizing the actual weights.}
+\label{weight_result}
+\end{figure}
+
+\subsection{Mission Summary}
 
 
-\section{Conceptual Design of the Benchmark Fighter}
-The comparison of the design obtained using the tool with known configuration of the aircraft follows next. Table~\ref{validation} presents the performance parameters that are calculated using the tool with that of the existing data\cite{}. A good agreement between values demostracte the accuracy of the tool.
 
-\subsection{Perturbations of Constraints}
+\subsection{Benchmarking the design}
+The comparison of the design obtained using the tool with known configuration of the aircraft follows next. Table~\ref{tab:validation} presents the performance parameters that are calculated using the tool with that of the existing similar design~\cite{valid1,valid2}. For this benchmark F86-Sabre-D, the forerunner of F86-Sabre-L and also the  RFP data for the J47-GE-33 engine are used. An overall good agreement can be seen between the values except for the thrust loading, which is due to the maximum-speed constraint shown in the constraint plot. Perturbing this constraint (e.g. altitude of 40000 instead of sea-level, maximum speed of 1000~$ft/s$ instead of 1200~$ft/s$ will provide the user with a design that has a lower thrust loading.
+\begin{table}[h]
+\caption{Validation of the F-86L Sabre design produced by the TASS}
+\centering 
+\begin{tabular}{c| c c c c}
+\hline\hline
+Design & Wing Loading $[lb/ft^2]$ & Thrust Loading & Gross Weight $[lb]$ & Planform Area $[ft^2]$ \\
+\hline\hline
+TASS             & 62 &  0.80 & 19259 & 311 \\
+Actual           & 68 &  0.38 & 19975 & 290 \\
+\hline\hline
+\end{tabular}
+\label{tab:validation}
+\end{table}
 
-A good end-result of the conceptual design phase is to identify answers to the following questions? 
-\begin{enumerate}
-\item Will it work?
-\item What does it look like?
-\item What requirements drive the design?
-\item What tradeoffs should be considered?
-\item What should it weigh and cost?
-\end{enumerate}
+\section{Conclusion}\label{conclusion}
 
-%\subsection{Mission Analysis}
-%\subsection{Conceptual Design}
-
-\section{Summary}\label{conclusion}
-
-This work presented a generic toolkit that performs sizing and synthesis of the aircraft configurations at the conceptual design level. The toolkit is provided with a graphical user-interface that helps non-expert users to simulate different requirements at the same time. It is validated against a known configuration of F-86 Sabrejet. 
+This work presented a toolkit that performs sizing and synthesis of the aircraft configurations at the conceptual design level. The toolkit is provided with a graphical user-interface that helps non-expert users to simulate different requirements at the same time. It is validated against a known configuration of F-86 Sabrejet.
 
 \bibliography{KomahannoVol}
 \bibliographystyle{plain}	
 
 \appendix
-\section{RFP for Benchmarking Test Case}\label{rfpbench}
 
 \section{Flexibility of the Tool}
 \label{appendix:flexibility}
@@ -272,11 +295,22 @@ This work presented a generic toolkit that performs sizing and synthesis of the 
 
 \begin{enumerate}
 
-\item The Graphical User Interface (GUI) takes the set of inputs and perform the analyses. As long as the inputs specified are within the validity of the underlying mathematical models, the tool will work for any set of requirements as explained in Section~\ref{benchmarking}.
+\item The Graphical User Interface (GUI) enables easy inputting of mission parameters to perform the analyses
 
-\item TASS can operate with both English and SI units
 
-\item TASS employs interpolations and extrapolations whenever it encounters data that are be rather difficult to supply or unavailable (e.g.) 
+\item The user can input any ``physically sound'' set of values as inputs to the three layouts that are the core-part of the TASS: (a) constraint analysis (b) mission analysis (c) mission summary
+
+\item The plots and tables are co-located with the inputs to help study the effect of different parameter perturbations with ease
+
+
+\item Clear/Reset push-buttons are provided in the tool that helps the user to start-off again with default values
+
+\item TASS employs interpolations and extrapolations whenever it encounters data that are be rather difficult to supply or unavailable:
+
+\begin{itemize}
+\item it models the drag polar plots presented in Mattingly~\cite{MattinglyText} Section (2.3.1)
+\item standard atmosphere model function~\cite{sky} used in the code that eliminated the need for treating them as constants at different stages in the mission
+\end{itemize}
 
 \end{enumerate}
 
@@ -285,6 +319,8 @@ This work presented a generic toolkit that performs sizing and synthesis of the 
 \begin{enumerate}
 
 \item  Since it is extremely laborious to implement sanity checks on the user-supplied values, it is recommended that the users proactively consider the physical meaning of the values supplied (e.g. range, rate of climb)
+
+\item The current version of TASS can only be used for designing airplanes that follow the ``same mission profile'' given in the RFP
 
 \end{enumerate}
 
@@ -307,80 +343,3 @@ at sea level and the predicted wing area. Compare these predicted values to the 
 ~\cite{HoweText}
 ~\cite{RaymerText}
 ~\cite{Raymer2004}
-
-layout
-graphs of interest
-scroll bars -- things happen
-user interface
-clean figures
-
-% add janes world aircraft to citations
-%http://www.boeing.com/boeing/history/bna/f86.page>
-%Roskam, J., Airplane Design: Part I, Preliminary Sizing of Airplanes, Roskam Aviation and Engineering Corporation, Ottawa, Kansas, 1985
-% draw mission profile in matlab based on inputs (back burner)
-
-% standard atmosphere model http://www.mathworks.com/help/aerotbx/ug/atmosisa.html
-1.) U.S. Standard Atmosphere, 1976, U.S. Government Printing Office, Washington, D.C.
-
-[T, a, P, rho] = atmosisa(height) implements the mathematical representation of the International Standard Atmosphere values for ambient temperature, pressure, density, and speed of sound for the input geopotential altitude.
-
-This function assumes that below the geopotential altitude of 0 km and above the geopotential altitude of the tropopause, temperature and pressure values are held.
-
-2.) Use 1976 COESA model
-
-Committee on Extension to the Standard Atmosphere has the acronym COESA. [T, a, P, Rho] = atmoscoesa(height, action) implements the mathematical representation of the 1976 COESA United States standard lower atmospheric values. These values are absolute temperature, pressure, density, and speed of sound for the input geopotential altitude.
-
-Below the geopotential altitude of 0 m (0 feet) and above the geopotential altitude of 84,852 m (approximately 278,386 feet), the function extrapolates values. It extrapolates temperature values linearly and pressure values logarithmically.
-
-
-% weight estimation model
-% thrust to weight ratio model
-% wing loading model
-% drag polar model
-
-% Constraint analysis
-  % Constant Altitude / Speed Cruise
-  % Constant Speed Climb
-  %Takeoff Ground Roll
-  % Braking Roll
-  % Constant Turn
-  %Plot these together and get the deign point
-
-%Mattingly [4], and Roskam [6] citation for energy based approach
-
-% 2006-2007 AIAA Graduate Design Competition RFP
-
-\subsection{Mission Definition}
-\subsubsection{Mission Profile}
-\subsubsection{Mission Parameters}
-the preliminary sizing of the aircraft’s take-off weight and empty weight are calculated.
-After the initial inputs are entered, the tool varies the take-off weight until the calculated empty weight equals the historical empty weight
-
-
-
-\section*{\centering{Nomenclature}}
-\begin{minipage}[b]{1.0\linewidth}%\centering
-\begin{tabular}{cccc}%@{}lcl@{}
-$T_{SL}$ & sea-level thrust           & lb       & N     \\
-$W_{TO}$ & take-off gross weight      & lb       & N     \\  
-$C_{D_0}$& drag at zero lift          &  no unit & no unit\\
-$K_1$   &                            &          &        \\
-$K_2$   &                            &          &        \\
-$R$     &                            &          &        \\
-$V$     &  velocity(speed)           &  $ft/s$  & $m/s$  \\
-$q$     & dynamic pressure           & $lb/ft^2$& $N/m^2$\\ 
-$S$     & wing planform area         & $ft^2$   & $m^2$  \\   
-$h$     &  altitude from sea level   & $ft$     & $m$    \\
-$g_0$   &  gravity at sea level      & $ft/s^2$ & $m/s^2$\\
-$\alpha$&                            &          &        \\
-$\beta$ &  weight fraction           &          &        \\
-%\hline
-%  \textit{Subscripts} & & \\
-%  $(.)_{global}$ && Corresponds to global surrogate\\
-%  \textit{Superscripts} & & \\
-%  $(.)^{(j)}$   && j-th training point or test candidate\\
-\end{tabular}
-\end{minipage}
-
-
- U.S. Standard Atmosphere, 1976, U.S. Government Printing Office, Washington, D.C.
