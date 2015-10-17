@@ -1,26 +1,37 @@
 \contentsline {section}{\numberline {1}Introduction and Motivation}{4}{section.1}
-\contentsline {section}{\numberline {2}Installation and Layout}{5}{section.2}
+\contentsline {section}{\numberline {2}Installation and Working }{5}{section.2}
 \contentsline {subsection}{\numberline {2.1}Installation}{5}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Constraint Analysis Layout}{5}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Mission Summary Layout}{5}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Weight Analysis Layout}{5}{subsection.2.4}
-\contentsline {section}{\numberline {3}Fighter Aircraft Example}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Aircraft Requirements}{6}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Functional Requirements}{6}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Mission Profile}{6}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Performance Requirements}{6}{subsection.3.2}
-\contentsline {section}{\numberline {4}Architecture of the Toolkit}{8}{section.4}
-\contentsline {paragraph}{Standard Atmosphere Model:}{8}{section*.7}
-\contentsline {paragraph}{Mattingly Energy Equation:}{8}{section*.8}
-\contentsline {subsection}{\numberline {4.1}Constraint Analysis}{9}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Weight Estimation}{9}{subsection.4.2}
-\contentsline {paragraph}{Payload and Crew Weights:}{9}{section*.10}
-\contentsline {paragraph}{Empty Weight Estimation:}{9}{section*.12}
-\contentsline {paragraph}{Fuel Weight Estimation:}{10}{section*.14}
-\contentsline {paragraph}{Weights Breakdown:}{10}{section*.16}
-\contentsline {subsection}{\numberline {4.3}Mission Summary}{10}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Benchmarking the design}{10}{subsection.4.4}
-\contentsline {section}{\numberline {5}Conclusion}{12}{section.5}
-\contentsline {section}{\numberline {A}Flexibility of the Tool}{13}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Versatility of the Tool}{13}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Challenges and Cons}{13}{subsection.A.2}
+\contentsline {paragraph}{Execution:}{5}{section*.4}
+\contentsline {paragraph}{Input:}{5}{section*.6}
+\contentsline {paragraph}{Output:}{5}{section*.7}
+\contentsline {subsection}{\numberline {2.3}Weight Analysis Layout}{5}{subsection.2.3}
+\contentsline {paragraph}{Execution:}{6}{section*.9}
+\contentsline {paragraph}{Input:}{6}{section*.10}
+\contentsline {paragraph}{Output:}{6}{section*.11}
+\contentsline {subsection}{\numberline {2.4}Mission Summary Layout}{6}{subsection.2.4}
+\contentsline {paragraph}{Execution:}{6}{section*.12}
+\contentsline {paragraph}{Input:}{7}{section*.13}
+\contentsline {paragraph}{Output:}{7}{section*.14}
+\contentsline {subsection}{\numberline {2.5}Theory and Models}{8}{subsection.2.5}
+\contentsline {paragraph}{Standard Atmosphere Model:}{8}{section*.17}
+\contentsline {paragraph}{Mattingly Energy Equation:}{8}{section*.18}
+\contentsline {section}{\numberline {3}Fighter Aircraft Design}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}Aircraft Requirements}{10}{subsection.3.1}
+\contentsline {paragraph}{Mission Profile:}{10}{section*.20}
+\contentsline {paragraph}{Functional Requirements:}{10}{section*.22}
+\contentsline {paragraph}{Performance Requirements:}{11}{section*.23}
+\contentsline {subsection}{\numberline {3.2}Constraint Analysis}{11}{subsection.3.2}
+\contentsline {paragraph}{Input:}{11}{section*.25}
+\contentsline {paragraph}{Output:}{12}{section*.28}
+\contentsline {subsection}{\numberline {3.3}Weight Estimation}{12}{subsection.3.3}
+\contentsline {paragraph}{Payload and Crew Weights:}{12}{section*.30}
+\contentsline {paragraph}{Empty Weight Estimation:}{13}{section*.32}
+\contentsline {paragraph}{Fuel Weight Estimation:}{14}{section*.34}
+\contentsline {paragraph}{Weights Breakdown:}{15}{section*.36}
+\contentsline {subsection}{\numberline {3.4}Mission Summary}{15}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Benchmarking the design}{15}{subsection.3.5}
+\contentsline {section}{\numberline {4}Conclusion}{17}{section.4}
+\contentsline {section}{\numberline {A}Flexibility of the Tool}{18}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Versatility of the Tool}{18}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Challenges and Cons}{18}{subsection.A.2}

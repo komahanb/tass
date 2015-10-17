@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.13)  16 OCT 2015 12:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.13)  16 OCT 2015 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -778,7 +778,7 @@ LaTeX Info: Redefining \nameref on input line 15.
 \openout6 = `main.out'.
 
  ABD: EveryShipout initializing macros
-<Cover.pdf, id=87, page=1, 614.295pt x 794.97pt>
+<Cover.pdf, id=75, page=1, 614.295pt x 794.97pt>
 File: Cover.pdf Graphic file (type pdf)
  <use Cover.pdf, page 1>
 Package pdftex.def Info: Cover.pdf, page1 used on input line 17.
@@ -838,147 +838,205 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 31.
 
-LaTeX Warning: Reference `installandbenchmnark' on page 4 undefined on input li
-ne 42.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--43
+Underfull \hbox (badness 10000) in paragraph at lines 36--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--43
+Underfull \hbox (badness 10000) in paragraph at lines 36--41
 
  []
 
+[4] <figures/constraints_layout.pdf, id=200, 1121.79097pt x 656.05098pt>
+File: figures/constraints_layout.pdf Graphic file (type pdf)
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--43
+<use figures/constraints_layout.pdf>
+Package pdftex.def Info: figures/constraints_layout.pdf used on input line 56.
+(pdftex.def)             Requested size: 504.80127pt x 295.22021pt.
 
+Overfull \hbox (35.04625pt too wide) in paragraph at lines 56--57
+ [][] 
  []
 
-[4] [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/weight_layout.pdf, id=203, 709.852pt x 619.91597pt>
+File: figures/weight_layout.pdf Graphic file (type pdf)
+
+<use figures/weight_layout.pdf>
+Package pdftex.def Info: figures/weight_layout.pdf used on input line 72.
+(pdftex.def)             Requested size: 425.91449pt x 371.95244pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 80.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
 
+Overfull \hbox (13.29402pt too wide) in paragraph at lines 89--90
+[]\OT1/cmr/m/n/10.95 by typ-ing \OT1/cmtt/m/n/10.95 mission[]summary \OT1/cmr/m
+/n/10.95 in the MAT-LAB com-mand line or by open-ing \OT1/cmtt/m/n/10.95 missio
+n[]summary.fig
+ []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+[6 <./figures/constraints_layout.pdf>]
+<figures/mission_layout.pdf, id=227, 1235.81696pt x 641.59702pt>
+File: figures/mission_layout.pdf Graphic file (type pdf)
 
+<use figures/mission_layout.pdf>
+Package pdftex.def Info: figures/mission_layout.pdf used on input line 104.
+(pdftex.def)             Requested size: 494.31802pt x 256.63425pt.
 
-LaTeX Warning: Reference `performance_reqs' on page 6 undefined on input line 1
-31.
+Overfull \hbox (24.563pt too wide) in paragraph at lines 104--105
+ [][] 
+ []
 
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 145.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6]
-
-LaTeX Warning: Text page 7 contains only floats.
-
-[7] <figures/sizing_overview.pdf, id=227, 508.299pt x 305.943pt>
+[7 <./figures/weight_layout.pdf>]
+<figures/sizing_overview.pdf, id=249, 508.299pt x 305.943pt>
 File: figures/sizing_overview.pdf Graphic file (type pdf)
 
 <use figures/sizing_overview.pdf>
-Package pdftex.def Info: figures/sizing_overview.pdf used on input line 157.
+Package pdftex.def Info: figures/sizing_overview.pdf used on input line 112.
 (pdftex.def)             Requested size: 432.05618pt x 260.05275pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./figures/sizing_overview.pdf>]
-<figures/payload_crew_weight_panel.pdf, id=255, 305.943pt x 145.343pt>
+[8 <./figures/mission_layout.pdf>] [9 <./figures/sizing_overview.pdf>] [10]
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 246.
+
+<figures/con_input.pdf, id=294, 758.835pt x 591.81097pt>
+File: figures/con_input.pdf Graphic file (type pdf)
+
+<use figures/con_input.pdf>
+Package pdftex.def Info: figures/con_input.pdf used on input line 269.
+(pdftex.def)             Requested size: 455.30452pt x 355.08932pt.
+
+<figures/constraint_plot.pdf, id=295, 405.515pt x 342.07799pt>
+File: figures/constraint_plot.pdf Graphic file (type pdf)
+
+<use figures/constraint_plot.pdf>
+Package pdftex.def Info: figures/constraint_plot.pdf used on input line 275.
+(pdftex.def)             Requested size: 243.31087pt x 205.24837pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/load3.pdf, id=298, 407.924pt x 348.50201pt>
+File: figures/load3.pdf Graphic file (type pdf)
+ <use figures/load3.pdf>
+Package pdftex.def Info: figures/load3.pdf used on input line 283.
+(pdftex.def)             Requested size: 244.75627pt x 209.10281pt.
+
+[11]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/payload_crew_weight_panel.pdf, id=315, 305.943pt x 145.343pt>
 File: figures/payload_crew_weight_panel.pdf Graphic file (type pdf)
 
 <use figures/payload_crew_weight_panel.pdf>
 Package pdftex.def Info: figures/payload_crew_weight_panel.pdf used on input li
-ne 226.
-(pdftex.def)             Requested size: 260.05275pt x 123.54211pt.
-
+ne 297.
+(pdftex.def)             Requested size: 152.97112pt x 72.67131pt.
+ [12 <./figures/con_input.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/empty_weight_panel.pdf, id=260, 297.11pt x 134.90399pt>
+<figures/empty_weight_panel.pdf, id=331, 297.11pt x 134.90399pt>
 File: figures/empty_weight_panel.pdf Graphic file (type pdf)
 
 <use figures/empty_weight_panel.pdf>
-Package pdftex.def Info: figures/empty_weight_panel.pdf used on input line 234.
+Package pdftex.def Info: figures/empty_weight_panel.pdf used on input line 305.
 
-(pdftex.def)             Requested size: 252.54468pt x 114.66893pt.
+(pdftex.def)             Requested size: 148.55463pt x 67.45183pt.
+ [13 <./figures/constraint_plot.pdf> <./figures/load3.pdf
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/fuel_weight_panel.pdf, id=265, 301.125pt x 305.943pt>
+pdfTeX warning: pdflatex (file ./figures/load3.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>] <figures/fuel_weight_panel.pdf, id=347, 301.125pt x 305.943pt>
 File: figures/fuel_weight_panel.pdf Graphic file (type pdf)
 
 <use figures/fuel_weight_panel.pdf>
-Package pdftex.def Info: figures/fuel_weight_panel.pdf used on input line 242.
-(pdftex.def)             Requested size: 255.95744pt x 260.05275pt.
- [9]
+Package pdftex.def Info: figures/fuel_weight_panel.pdf used on input line 313.
+(pdftex.def)             Requested size: 150.56212pt x 152.97112pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<figures/weight_result.pdf, id=352, 369.38pt x 514.72299pt>
+File: figures/weight_result.pdf Graphic file (type pdf)
 
-<figures/pie_weight.pdf, id=275, 653.64201pt x 337.26pt>
-File: figures/pie_weight.pdf Graphic file (type pdf)
+<use figures/weight_result.pdf>
+Package pdftex.def Info: figures/weight_result.pdf used on input line 323.
+(pdftex.def)             Requested size: 184.68954pt x 257.36086pt.
+ [14 <./figures/payload_crew_weight_panel.pdf> <./figures/empty_weight_panel.pd
+f
 
-<use figures/pie_weight.pdf>
-Package pdftex.def Info: figures/pie_weight.pdf used on input line 253.
-(pdftex.def)             Requested size: 225.4804pt x 116.33939pt.
+pdfTeX warning: pdflatex (file ./figures/empty_weight_panel.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./figures/fuel_weight_panel.pdf
 
-<figures/summary_weight.pdf, id=276, 646.415pt x 256.96pt>
-File: figures/summary_weight.pdf Graphic file (type pdf)
+pdfTeX warning: pdflatex (file ./figures/fuel_weight_panel.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
+>] <figures/missionsum.pdf, id=370, 672.91403pt x 517.935pt>
+File: figures/missionsum.pdf Graphic file (type pdf)
 
-<use figures/summary_weight.pdf>
-Package pdftex.def Info: figures/summary_weight.pdf used on input line 256.
-(pdftex.def)             Requested size: 225.4804pt x 89.63152pt.
+<use figures/missionsum.pdf>
+Package pdftex.def Info: figures/missionsum.pdf used on input line 334.
+(pdftex.def)             Requested size: 403.75154pt x 310.76338pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10 <./figures/payload_crew_weight_panel.pdf> <./figures/empty_weight_panel.pdf
+<figures/dragpolar.pdf, id=371, 454.49799pt x 346.89601pt>
+File: figures/dragpolar.pdf Graphic file (type pdf)
+
+<use figures/dragpolar.pdf>
+Package pdftex.def Info: figures/dragpolar.pdf used on input line 342.
+(pdftex.def)             Requested size: 204.52219pt x 156.10176pt.
 
 
-pdfTeX warning: pdflatex (file ./figures/empty_weight_panel.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
->] [11 <./figures/fuel_weight_panel.pdf> <./figures/pie_weight.pdf
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-pdfTeX warning: pdflatex (file ./figures/pie_weight.pdf): PDF inclusion: multip
-le pdfs with page group included in a single page
-> <./figures/summary_weight.pdf
+[15 <./figures/weight_result.pdf>] [16 <./figures/missionsum.pdf> <./figures/dr
+agpolar.pdf
 
-pdfTeX warning: pdflatex (file ./figures/summary_weight.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
->] (./main.bbl) [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 327.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 327.
+pdfTeX warning: pdflatex (file ./figures/dragpolar.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>] (./main.bbl) [17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 414.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 414.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 327.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 327.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 414.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 414.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2AFA29AC727A4C508A4C20543DC40FB9;1345.
+(rerunfilecheck)             Checksum: 27D47C8C70D1AC597B90D56D07F6191C;1118.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 327.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
  ) 
 Here is how much of TeX's memory you used:
- 17501 strings out of 493304
- 302903 string characters out of 6139871
- 381961 words of memory out of 5000000
- 20474 multiletter control sequences out of 15000+600000
+ 17573 strings out of 493304
+ 304185 string characters out of 6139871
+ 380680 words of memory out of 5000000
+ 20507 multiletter control sequences out of 15000+600000
  24152 words of font info for 96 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,16n,55p,1199b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,55p,1199b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -987,19 +1045,21 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (13 pages, 330653 bytes).
+t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (18 pages, 643084 bytes).
 PDF statistics:
- 397 PDF objects out of 1000 (max. 8388607)
- 341 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 208 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 420 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 219 words of extra memory for PDF output out of 10000 (max. 10000000)
 

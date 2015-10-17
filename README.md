@@ -10,3 +10,10 @@ F-86L Sabre (Sabrejet)
 =================================================================================
 This tool and documentation may, at times, sound more academic. It is indeed an academic project in one of my graduate courses. However, I have put my fullest possible effort to align it with interests of general readers and users i.e. sizing and synthesis of aircraft configurations, without compromising the academic deliverables.
 =================================================================================
+
+For source code look into the src director. Make sure that change the MATLAB's working directory to tass/src/
+
+MAIN FILES: (double click them)
+-----------
+(a ) constraint_analysis.fig (b) weight_analysis.fig (c)  mission_summary.fig 
+
